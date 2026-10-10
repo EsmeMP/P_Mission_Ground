@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sr;
     Vector2 direccion;
     string animActual = "";
+    string ultimaDireccion = "frente"; // frente, detras o lateral
 
     void Awake()
     {
@@ -37,28 +38,27 @@ public class PlayerMovement : MonoBehaviour
 
     void ActualizarAnimacion(float x, float y)
     {
-        if (x == 0f && y == 0f)
+        bool caminando = (x != 0f || y != 0f);
+
+        if (caminando)
         {
-            anim.speed = 0f; // se queda quieta en el cuadro actual
-            return;
+            if (x != 0f)
+            {
+                ultimaDireccion = "lateral";
+                sr.flipX = x < 0f; // izquierda = voltear
+            }
+            else if (y > 0f)
+            {
+                ultimaDireccion = "detras";
+            }
+            else
+            {
+                ultimaDireccion = "frente";
+            }
         }
 
-        anim.speed = 1f;
-
-        string nueva;
-        if (x != 0f)
-        {
-            nueva = "cassandra_caminar_lateral";
-            sr.flipX = x < 0f; // izquierda = voltear
-        }
-        else if (y > 0f)
-        {
-            nueva = "cassandra_caminar_detras";
-        }
-        else
-        {
-            nueva = "cassandra_caminar_frente";
-        }
+        string accion = caminando ? "caminar" : "respirar";
+        string nueva = "cassandra_" + accion + "_" + ultimaDireccion;
 
         if (nueva != animActual)
         {
