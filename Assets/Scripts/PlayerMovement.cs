@@ -21,6 +21,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Si hay un diálogo abierto, Cassandra se queda quieta respirando
+        if (DialogoNPC.Activo)
+        {
+            direccion = Vector2.zero;
+            ActualizarAnimacion(0f, 0f);
+            return;
+        }
+
         var k = Keyboard.current;
         if (k == null) return;
 
