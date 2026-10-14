@@ -7,6 +7,7 @@ public class GitCatchManager : MonoBehaviour
 
     public int vidas = 3;
     public int puntos = 0;
+    public int puntosParaMedalla = 50;
 
     public SpriteRenderer[] corazones;
     public Sprite corazonLleno;
@@ -17,6 +18,11 @@ public class GitCatchManager : MonoBehaviour
     [Header("Game Over")]
     public GameObject panelGameOver;
     public TMP_Text textoPuntosFinal;
+    public TMP_Text textoTitulo;
+    public GameObject textoObjetivo;
+
+    public static bool MedallaGanada;
+    bool medallaLograda;
 
     void Awake()
     {
@@ -27,6 +33,7 @@ public class GitCatchManager : MonoBehaviour
     void Start()
     {
         if (panelGameOver != null) panelGameOver.SetActive(false);
+        if (textoObjetivo != null) textoObjetivo.SetActive(false);
         ActualizarTexto();
     }
 
@@ -40,6 +47,7 @@ public class GitCatchManager : MonoBehaviour
     {
         if (vidas <= 0) return;
         puntos++;
+        if (puntos >= puntosParaMedalla) medallaLograda = true;
         ActualizarTexto();
     }
 
@@ -58,6 +66,14 @@ public class GitCatchManager : MonoBehaviour
 
     void TerminarJuego()
     {
+        if (medallaLograda) MedallaGanada = true;
+
+        if (textoTitulo != null)
+            textoTitulo.text = medallaLograda ? "Objetivo cumplido!" : "Perdiste!";
+
+        if (textoObjetivo != null)
+            textoObjetivo.SetActive(medallaLograda);
+
         if (textoPuntosFinal != null)
             textoPuntosFinal.text = "Puntos: " + puntos;
 
