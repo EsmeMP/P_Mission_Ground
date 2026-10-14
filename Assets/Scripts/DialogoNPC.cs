@@ -17,7 +17,7 @@ public class DialogoNPC : MonoBehaviour
 
     public string[] lineas =
     {
-        "¡Hola! Soy la maestra Diana Lizeth Ahuatzi Reyes.",
+        "Hola! Soy la maestra Diana Lizeth Ahuatzi Reyes.",
         "Me encargo de dar materias como Gestion de Procesos de Desarrollo de Software, Ética y Legislación en Tecnologías, etc.",
         "Dato curioso:"
     };
