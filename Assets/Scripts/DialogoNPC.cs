@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogoNPC : MonoBehaviour
@@ -9,6 +10,10 @@ public class DialogoNPC : MonoBehaviour
     public TMP_Text textoDialogo;
     public GameObject aviso;
     public float radioInteraccion = 1.5f;
+
+    [Header("Minijuego (opcional)")]
+    public bool abreMinijuego = false;
+    public string nombreEscenaMinijuego = "MinijuegoGitCatch";
 
     public string[] lineas =
     {
@@ -73,6 +78,9 @@ public class DialogoNPC : MonoBehaviour
     {
         Activo = false;
         cajaDialogo.SetActive(false);
+
+        if (abreMinijuego)
+            SceneManager.LoadScene(nombreEscenaMinijuego);
     }
 
     void OnDrawGizmosSelected()

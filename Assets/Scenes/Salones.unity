@@ -17532,6 +17532,8 @@ MonoBehaviour:
   textoDialogo: {fileID: 1444470046}
   aviso: {fileID: 768459637}
   radioInteraccion: 1.5
+  abreMinijuego: 1
+  nombreEscenaMinijuego: MinijuegoGitCatch
   lineas:
   - "\xA1Hola! Soy la maestra Diana Lizeth Ahuatzi Reyes."
   - "Doy Gesti\xF3n de Proyectos de Software."
