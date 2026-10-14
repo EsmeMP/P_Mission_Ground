@@ -22,6 +22,12 @@ public class GitCatchManager : MonoBehaviour
     public GameObject textoObjetivo;
 
     public static bool MedallaGanada;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ReiniciarMedalla()
+    {
+        MedallaGanada = false;
+    }
     bool medallaLograda;
 
     void Awake()

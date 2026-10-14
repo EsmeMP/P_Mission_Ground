@@ -23,6 +23,8 @@ public class DialogoNPC : MonoBehaviour
     };
 
     public static bool Activo;
+    static bool hayPosicionGuardada;
+    static Vector3 posicionGuardada;
     int indice;
 
     void Start()
@@ -30,6 +32,13 @@ public class DialogoNPC : MonoBehaviour
         cajaDialogo.SetActive(false);
         if (aviso != null) aviso.SetActive(false);
         Activo = false;
+
+        if (hayPosicionGuardada && jugador != null)
+        {
+            jugador.position = posicionGuardada;
+            Physics2D.SyncTransforms();
+            hayPosicionGuardada = false;
+        }
     }
 
     void Update()
@@ -80,7 +89,11 @@ public class DialogoNPC : MonoBehaviour
         cajaDialogo.SetActive(false);
 
         if (abreMinijuego)
+        {
+            posicionGuardada = jugador.position;
+            hayPosicionGuardada = true;
             SceneManager.LoadScene(nombreEscenaMinijuego);
+        }
     }
 
     void OnDrawGizmosSelected()

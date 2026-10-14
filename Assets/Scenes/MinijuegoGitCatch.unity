@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GitCatchManager
   vidas: 3
   puntos: 0
-  puntosParaMedalla: 30
+  puntosParaMedalla: 3
   corazones:
   - {fileID: 2054761263}
   - {fileID: 983074950}
