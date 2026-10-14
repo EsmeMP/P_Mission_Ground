@@ -11,7 +11,12 @@ public class ObjetoCae : MonoBehaviour
         transform.position += Vector3.down * velocidad * Time.deltaTime;
 
         if (transform.position.y < limiteInferior)
+        {
+            if (esBueno && GitCatchManager.Instancia != null)
+                GitCatchManager.Instancia.PerderVida();
+
             Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D otro)
