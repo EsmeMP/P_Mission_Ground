@@ -4909,7 +4909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinimapaFollow
   target: {fileID: 995494718}
-  mapa: {fileID: 1483657080}
+  mapa: {fileID: 0}
   margen: 3
   zoom: 12
 --- !u!114 &493896672
@@ -17808,9 +17808,9 @@ MonoBehaviour:
   abreMinijuego: 1
   nombreEscenaMinijuego: MinijuegoGitCatch
   lineas:
-  - "\xA1Hola! Soy la maestra Diana Lizeth Ahuatzi Reyes."
+  - Hola! Soy la maestra Diana Lizeth Ahuatzi Reyes.
   - "Doy Gesti\xF3n de Proyectos de Software."
-  - Me gustan mucho los gatos
+  - Vayamos a jugar!
 --- !u!114 &650707810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62642,7 +62642,7 @@ SpriteRenderer:
   m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 00e89e68d6b2991eba053cef745f21c2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.4980392, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
