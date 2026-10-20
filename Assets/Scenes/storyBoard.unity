@@ -279,7 +279,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048446992}
-  - component: {fileID: 1048446991}
+  - component: {fileID: 1048446993}
   m_Layer: 0
   m_Name: HistoriaManager
   m_TagString: Untagged
@@ -436,26 +436,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1048446991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048446990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74134ae45217b7e43b9128b87bfa4530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ControladorStoryboard
-  escenaJuego: SampleScene
-  imagenDisplay: {fileID: 1676738526}
-  textoBoton: {fileID: 0}
-  vinetas:
-  - {fileID: -8977229969404483857, guid: 215bbe4d29a116b479012a2b321f4ef3, type: 3}
-  - {fileID: 1306434213303705233, guid: 85f446fbf452bf94c8ad7c618468cf10, type: 3}
-  - {fileID: 4438303469089218807, guid: 7bbf546e3988ea049b4b82a15978a28d, type: 3}
-  - {fileID: -1576257347253327168, guid: f8d0f44c070931745aae950a5cdbcf8e, type: 3}
 --- !u!4 &1048446992
 Transform:
   m_ObjectHideFlags: 0
@@ -471,6 +451,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2019484654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1048446993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048446990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5a2b5ee7ec5ca62915f6db60c20eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControladorStoryboard
+  imagenHistoria: {fileID: 1676738526}
+  paginas:
+  - {fileID: -8977229969404483857, guid: 215bbe4d29a116b479012a2b321f4ef3, type: 3}
+  - {fileID: 1306434213303705233, guid: 85f446fbf452bf94c8ad7c618468cf10, type: 3}
+  - {fileID: 4438303469089218807, guid: 7bbf546e3988ea049b4b82a15978a28d, type: 3}
+  - {fileID: -1576257347253327168, guid: f8d0f44c070931745aae950a5cdbcf8e, type: 3}
+  botonSkip: {fileID: 1380230545}
+  escenaSiguiente: SeleccionarPersonaje
 --- !u!1 &1380230543
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,17 +499,17 @@ RectTransform:
   m_GameObject: {fileID: 1380230543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1864156586}
   m_Father: {fileID: 2019484654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -24, y: -331}
-  m_SizeDelta: {x: 71.7261, y: 27.6337}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -90, y: 2}
+  m_SizeDelta: {x: 71.7261, y: 27.633667}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1380230545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1048446991}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControladorStoryboard, Assembly-CSharp
         m_MethodName: AvanzarOIniciar
         m_Mode: 1
@@ -644,7 +644,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -8977229969404483857, guid: 215bbe4d29a116b479012a2b321f4ef3, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -674,10 +674,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2019484654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 854, y: 376}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1864156585
 GameObject:

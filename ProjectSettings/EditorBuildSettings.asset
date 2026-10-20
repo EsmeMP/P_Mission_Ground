@@ -6,20 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/mainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 40d5a095f3b06114aa14d274dcc82a77
   - enabled: 1
-    path: Assets/Scenes/storyBoard.unity
-    guid: e0ae9905dc42047439a947987da1929e
+    path: Assets/Scenes/StoryBoard.unity
+    guid: 99391e7ea793c28679186f81a5a2e5e0
   - enabled: 1
-    path: Assets/Scenes/Personajes.unity
-    guid: 5d8ed0b9a8924f948b9c8620d9fdee6d
+    path: Assets/Scenes/SeleccionarPersonaje.unity
+    guid: 3d0a1d0e539feb94290e2c476f091235
   - enabled: 1
+    path: Assets/Scenes/Salones.unity
+    guid: fc7aa3198127e809aa2e31f510e098f0
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoGitCatch.unity
+    guid: 2cece845e3eab1eef95ad06c975074d5
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/inicioJuego.unity
-    guid: 3d0a1d0e539feb94290e2c476f091235
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

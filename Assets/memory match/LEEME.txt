@@ -1,0 +1,29 @@
+MEMORAMA TECH - 24 CARTAS SEPARADAS + REVERSO
+==============================================
+
+Cada concepto son DOS cartas: una con la IMAGEN y otra con la PALABRA (ingles).
+El jugador empareja la carta de imagen con su carta de palabra.
+12 parejas = 24 cartas. 3 carreras x 4 conceptos. Nada se repite.
+
+Parejas (imagen <-> palabra):
+  Software Development:  CODE | DEBUG | LAPTOP | DATABASE
+  Digital Networks:      ROUTER | SERVER | CLOUD | WIFI
+  Virtual Environments:  AVATAR | HEADSET | CUBE | CONTROLLER
+
+ARCHIVOS (300x300 px, PNG con transparencia)
+--------------------------------------------
+  IMG_01..12_*.png   -> 12 cartas de IMAGEN
+  WORD_01..12_*.png  -> 12 cartas de PALABRA (misma numeracion = misma pareja)
+  REVERSO.png        -> el reverso comun de todas las cartas
+  _parejas.png       -> hoja de referencia con cada pareja
+
+El color del marco indica la carrera (solo decorativo):
+  azul = Software Development | verde = Digital Networks | morado = Virtual Environments
+
+PARA IMPRIMIR
+-------------
+  Imprime las 24 cartas por el frente y REVERSO.png por el dorso (doble cara).
+
+PARA UNITY
+----------
+  Texture Type: Sprite (2D and UI) | PPU: 300 | Filter: Point | Compression: None
