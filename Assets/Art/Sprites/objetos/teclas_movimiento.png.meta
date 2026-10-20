@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2aa13c95fb963217c89e58d70e21d0d4
+guid: 46df1345aa3fee8fc8ec10151e9d3443
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6591090017945547028
-    second: fondo_gitcatch_0
+      213: -1991709248994679457
+    second: teclas_movimiento_0
+  - first:
+      213: 6493814804659784076
+    second: teclas_movimiento_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondo_gitcatch_0
+      name: teclas_movimiento_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 320
-        height: 180
+        y: 4
+        width: 31
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cee8bbdbc8eb784a0800000000000000
-      internalID: -6591090017945547028
+      spriteID: f55efc59df60c54e0800000000000000
+      internalID: -1991709248994679457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teclas_movimiento_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 4
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c894becb82aae1a50800000000000000
+      internalID: 6493814804659784076
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fondo_gitcatch_0: -6591090017945547028
+      teclas_movimiento_0: -1991709248994679457
+      teclas_movimiento_1: 6493814804659784076
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
