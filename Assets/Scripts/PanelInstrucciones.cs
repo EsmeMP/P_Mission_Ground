@@ -15,7 +15,8 @@ public class PanelInstrucciones : MonoBehaviour
     {
         public string titulo;
         [TextArea(2, 6)] public string texto;
-        public Sprite imagen;               // opcional: si esta vacio se oculta la imagen
+        public Sprite imagen;              
+         // opcional: si esta vacio se oculta la imagen
     }
 
     [Header("Contenido (una entrada = una pagina)")]
@@ -31,14 +32,16 @@ public class PanelInstrucciones : MonoBehaviour
     public Button botonContinuar;           // cierra el panel
 
     [Header("Opciones")]
-    public bool mostrarAlIniciar = true;    // aparece al entrar a la escena
+    public bool mostrarAlIniciar = true;    // aparece al empezar la partida (solo la primera vez)
     public bool pausarJuego = true;         // Time.timeScale = 0 mientras esta abierto
     public bool soloContinuarEnUltimaPagina = false;
-    public bool mostrarSoloUnaVez = false;  // recuerda que ya se vio (PlayerPrefs)
-    public string claveGuardado = "Instrucciones_Salones";
 
     [Header("Ocultar mientras el panel esta abierto (opcional)")]
-    public GameObject[] ocultarMientrasAbierto;   // p. ej. AvisoInteraccion, Minimapa, TextoMedallas
+    public GameObject[] ocultarMientrasAbierto;   
+    // AvisoInteraccion, Minimapa, TextoMedallas
+
+    public static bool yaSeMostro;          
+    // se conserva al cambiar de escena
 
     int indice;
     bool abierto;
@@ -47,6 +50,9 @@ public class PanelInstrucciones : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1f;              
+          // la escena siempre empieza sin pausa
+
         if (botonAnterior)   botonAnterior.onClick.AddListener(Anterior);
         if (botonSiguiente)  botonSiguiente.onClick.AddListener(Siguiente);
         if (botonContinuar)  botonContinuar.onClick.AddListener(Cerrar);
@@ -57,7 +63,9 @@ public class PanelInstrucciones : MonoBehaviour
     void Start()
     {
         if (!mostrarAlIniciar) return;
-        if (mostrarSoloUnaVez && PlayerPrefs.GetInt(claveGuardado, 0) == 1) return;
+        if (yaSeMostro) return;             
+        //  despues de la primera vez ya no sale
+        yaSeMostro = true;
         Abrir();
     }
 
@@ -71,7 +79,8 @@ public class PanelInstrucciones : MonoBehaviour
 
         if (pausarJuego)
         {
-            escalaPrevia = Time.timeScale;
+            escalaPrevia = 1f;              
+            //  nunca guardar una pausa como "normal"
             Time.timeScale = 0f;
         }
 
@@ -99,12 +108,6 @@ public class PanelInstrucciones : MonoBehaviour
             if (ocultarMientrasAbierto[i]) ocultarMientrasAbierto[i].SetActive(estadoPrevio[i]);
 
         if (pausarJuego) Time.timeScale = escalaPrevia;
-
-        if (mostrarSoloUnaVez)
-        {
-            PlayerPrefs.SetInt(claveGuardado, 1);
-            PlayerPrefs.Save();
-        }
     }
 
     public void Siguiente()
@@ -137,9 +140,9 @@ public class PanelInstrucciones : MonoBehaviour
         if (botonContinuar) botonContinuar.gameObject.SetActive(!soloContinuarEnUltimaPagina || ultima);
     }
 
-    // Seguridad: si cambias de escena con el panel abierto, no dejes el juego pausado.
+    // Seguridad: si cambia de escena con el panel abierto, no deja el juego pausado.
     void OnDestroy()
     {
-        if (abierto && pausarJuego) Time.timeScale = escalaPrevia;
+        if (abierto && pausarJuego) Time.timeScale = 1f;
     }
 }

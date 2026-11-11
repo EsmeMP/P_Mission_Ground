@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     private bool juegoActivo = false;
     private bool juegoPausado = false;
     private int paresEncontrados = 0;
-    private int totalParesAcumulados = 0; // Para llevar la cuenta total de puntos/pares en la partida
+    private int totalParesAcumulados = 0; 
+    // Para llevar la cuenta total de puntos/pares en la partida
 
     [Header("Sistema de Vidas (Corazones)")]
     public int vidasActuales = 3;
@@ -53,11 +54,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textoPares;
     public TextMeshProUGUI textoTituloRonda;
     public GameObject panelGameOver;
-    public TextMeshProUGUI textoPuntosGameOver; // El texto que mostrará "PUNTOS: X" en el menú de derrota
+    public TextMeshProUGUI textoPuntosGameOver; 
+    // El texto que mostrará "PUNTOS: X" en el menú de derrota
     public GameObject panelPausa;
 
     void Start()
     {
+        Time.timeScale = 1f;
+         // el minijuego siempre empieza sin pausa
+
         vidasActuales = maxVidas;
         totalParesAcumulados = 0;
 
@@ -66,6 +71,12 @@ public class GameManager : MonoBehaviour
 
         ActualizarCorazonesUI();
         IniciarRonda(0);
+    }
+
+    void OnDestroy()
+    {
+        Time.timeScale = 1f; 
+        //  al salir de esta escena, por cualquier camino, se quita la pausa
     }
 
     void Update()
@@ -198,7 +209,8 @@ public class GameManager : MonoBehaviour
             segundaCartaSeleccionada.MarcarComoEncontrada();
 
             paresEncontrados++;
-            totalParesAcumulados++; // Suma un punto al marcador total
+            totalParesAcumulados++; 
+            // Suma un punto al marcador total
             ActualizarUI();
 
             RondaConfig config = rondas[indiceRondaActual];
@@ -302,7 +314,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         vidasActuales = maxVidas;
-        totalParesAcumulados = 0; // Reiniciar puntos
+        totalParesAcumulados = 0; 
+        // Reiniciar puntos
         ActualizarCorazonesUI();
         IniciarRonda(0);
     }
@@ -310,9 +323,6 @@ public class GameManager : MonoBehaviour
     public void BotonSalir()
     {
         Time.timeScale = 1f;
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneManager.LoadScene("Salones");   // regresa al salón en vez de cerrar el juego
     }
 }

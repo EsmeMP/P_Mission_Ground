@@ -21020,6 +21020,7 @@ GameObject:
   - component: {fileID: 995494715}
   - component: {fileID: 995494714}
   - component: {fileID: 995494713}
+  - component: {fileID: 995494719}
   m_Layer: 0
   m_Name: cassandra
   m_TagString: Untagged
@@ -21102,7 +21103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995494712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68637b9ad3b34e4499564de21d0bc156, type: 3}
   m_Name: 
@@ -21210,6 +21211,20 @@ Transform:
   - {fileID: 1830983935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995494719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995494712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a6290deb7bad0c7b2c9623e959ac08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RunCassandra
+  speed: 3
+  runSpeed: 6
 --- !u!1 &1043463600
 GameObject:
   m_ObjectHideFlags: 0
@@ -21699,8 +21714,6 @@ MonoBehaviour:
   mostrarAlIniciar: 1
   pausarJuego: 1
   soloContinuarEnUltimaPagina: 0
-  mostrarSoloUnaVez: 0
-  claveGuardado: Instrucciones_Salones
   ocultarMientrasAbierto:
   - {fileID: 682731490}
   - {fileID: 768459637}
