@@ -26,6 +26,7 @@ public class DialogoNPC : MonoBehaviour
     static bool hayPosicionGuardada;
     static Vector3 posicionGuardada;
     int indice;
+    bool miDialogo; // CAMBIO 1: solo este maestro controla su diálogo
 
     void Start()
     {
@@ -59,7 +60,7 @@ public class DialogoNPC : MonoBehaviour
             if (cerca && interactuar)
                 Abrir();
         }
-        else if (avanzar)
+        else if (miDialogo && avanzar) // CAMBIO 2: solo avanza el que abrió
         {
             Siguiente();
         }
@@ -68,6 +69,7 @@ public class DialogoNPC : MonoBehaviour
     void Abrir()
     {
         Activo = true;
+        miDialogo = true; // CAMBIO 3
         indice = 0;
         if (aviso != null) aviso.SetActive(false);
         cajaDialogo.SetActive(true);
@@ -86,6 +88,7 @@ public class DialogoNPC : MonoBehaviour
     void Cerrar()
     {
         Activo = false;
+        miDialogo = false; // CAMBIO 4
         cajaDialogo.SetActive(false);
 
         if (abreMinijuego)

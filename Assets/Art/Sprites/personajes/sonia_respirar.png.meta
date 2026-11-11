@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 1c720c3ebc808e272a5e684a563236f5
+guid: deec34df240814fe78ee80c08b944da2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -444228892480167046
-    second: ruth_respirar_0
+      213: 4013360285236149858
+    second: sonia_respirar_0
   - first:
-      213: -6485366861641291653
-    second: ruth_respirar_1
+      213: 8296166650760963029
+    second: sonia_respirar_1
   - first:
-      213: 1170286785612496042
-    second: ruth_respirar_2
+      213: -6598744172275081027
+    second: sonia_respirar_2
   - first:
-      213: 4451777031536025110
-    second: ruth_respirar_3
+      213: -2753265493676670299
+    second: sonia_respirar_3
   - first:
-      213: 442725854307578433
-    second: ruth_respirar_4
+      213: 6185880330394842179
+    second: sonia_respirar_4
   - first:
-      213: -5021431063493604875
-    second: ruth_respirar_5
+      213: 7941839556088657761
+    second: sonia_respirar_5
   - first:
-      213: 1911721442446433750
-    second: ruth_respirar_6
+      213: 1896384318476802263
+    second: sonia_respirar_6
   - first:
-      213: -100316079924443947
-    second: ruth_respirar_7
+      213: -4385127997448683244
+    second: sonia_respirar_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -134,7 +134,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ruth_respirar_0
+      name: sonia_respirar_0
       rect:
         serializedVersion: 2
         x: 0
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7321c80d28c5d9f0800000000000000
-      internalID: -444228892480167046
+      spriteID: 26e392d6ae152b730800000000000000
+      internalID: 4013360285236149858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_1
+      name: sonia_respirar_1
       rect:
         serializedVersion: 2
         x: 32
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b78e7c543395ff5a0800000000000000
-      internalID: -6485366861641291653
+      spriteID: 5d3ac082d97e12370800000000000000
+      internalID: 8296166650760963029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_2
+      name: sonia_respirar_2
       rect:
         serializedVersion: 2
         x: 64
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aac34cd81a1bd3010800000000000000
-      internalID: 1170286785612496042
+      spriteID: db06ddf032d8c64a0800000000000000
+      internalID: -6598744172275081027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_3
+      name: sonia_respirar_3
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61e92f7af93e7cd30800000000000000
-      internalID: 4451777031536025110
+      spriteID: 5a2cf05fe9f6ac9d0800000000000000
+      internalID: -2753265493676670299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_4
+      name: sonia_respirar_4
       rect:
         serializedVersion: 2
         x: 32
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14272ee91d0e42600800000000000000
-      internalID: 442725854307578433
+      spriteID: 344b244e269a8d550800000000000000
+      internalID: 6185880330394842179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_5
+      name: sonia_respirar_5
       rect:
         serializedVersion: 2
         x: 64
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f90a5c6d0b405ab0800000000000000
-      internalID: -5021431063493604875
+      spriteID: 1677fc3aff4173e60800000000000000
+      internalID: 7941839556088657761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_6
+      name: sonia_respirar_6
       rect:
         serializedVersion: 2
         x: 0
@@ -281,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dd548ee58cc78a10800000000000000
-      internalID: 1911721442446433750
+      spriteID: 7d85e6c7d7f415a10800000000000000
+      internalID: 1896384318476802263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ruth_respirar_7
+      name: sonia_respirar_7
       rect:
         serializedVersion: 2
         x: 32
@@ -303,8 +303,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d408da8e0b9b9ef0800000000000000
-      internalID: -100316079924443947
+      spriteID: 4118379d155e423c0800000000000000
+      internalID: -4385127997448683244
       vertices: []
       indices: 
       edges: []
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 79628601e21329d2ba7e85ac108a5440
+    spriteID: f4b657cc30763a7829d85e1b93f76abf
     internalID: 0
     vertices: []
     indices: 
@@ -325,14 +325,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      ruth_respirar_0: -444228892480167046
-      ruth_respirar_1: -6485366861641291653
-      ruth_respirar_2: 1170286785612496042
-      ruth_respirar_3: 4451777031536025110
-      ruth_respirar_4: 442725854307578433
-      ruth_respirar_5: -5021431063493604875
-      ruth_respirar_6: 1911721442446433750
-      ruth_respirar_7: -100316079924443947
+      sonia_respirar_0: 4013360285236149858
+      sonia_respirar_1: 8296166650760963029
+      sonia_respirar_2: -6598744172275081027
+      sonia_respirar_3: -2753265493676670299
+      sonia_respirar_4: 6185880330394842179
+      sonia_respirar_5: 7941839556088657761
+      sonia_respirar_6: 1896384318476802263
+      sonia_respirar_7: -4385127997448683244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
