@@ -65562,6 +65562,7 @@ GameObject:
   - component: {fileID: 1759822600}
   - component: {fileID: 1759822599}
   - component: {fileID: 1759822598}
+  - component: {fileID: 1759822601}
   m_Layer: 0
   m_Name: paco
   m_TagString: Untagged
@@ -65665,6 +65666,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1759822601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759822597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43ac8a5f9b3735d1966bfe07c0f43f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogoNPC
+  jugador: {fileID: 995494718}
+  cajaDialogo: {fileID: 624725730}
+  textoDialogo: {fileID: 1444470046}
+  aviso: {fileID: 768459637}
+  radioInteraccion: 1.5
+  abreMinijuego: 1
+  nombreEscenaMinijuego: FastTyperScene
+  lineas:
+  - Hola! Soy el maestro Francisco Lopez Briones
+  - Me encargo de dar materias en Desarrollo de Software
+  - Juguemos un juego...
+  - Escribe tan rapido como puedas
 --- !u!1 &1830983934
 GameObject:
   m_ObjectHideFlags: 0

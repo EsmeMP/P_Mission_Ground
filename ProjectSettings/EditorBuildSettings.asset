@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FlappyVR.unity
     guid: 1310bd9fed10af7e0811e34f51b54e06
+  - enabled: 1
+    path: Assets/Scenes/FastTyperScene.unity
+    guid: a1d162465da1aa24981627749277ad55
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
