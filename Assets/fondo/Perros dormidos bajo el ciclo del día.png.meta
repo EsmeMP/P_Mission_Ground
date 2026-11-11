@@ -1,0 +1,674 @@
+fileFormatVersion: 2
+guid: 8ee7631d4ef54ef4ebe1d278a445cca0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4768971686670832306
+    second: "Perros dormidos bajo el ciclo del d\xEDa_0"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 932
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b219ef5b7ace2240800000000000000
+      internalID: 4768971686670832306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_1"
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 932
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28db3176e65fb094bbbdc9449f91488d
+      internalID: 2070095402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_2"
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 932
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0238a874444f44d9b8e7d84a8cd6f8
+      internalID: -1764303774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_3"
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 932
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae3b1898cd44864da5810a3ac37a44e
+      internalID: 2002235309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_4"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 932
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c212b4c836d8cdc418623021d719136a
+      internalID: 1686338519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_5"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 699
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39b07479dafa154dba37c4e5688b378
+      internalID: -1004997550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_6"
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 699
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d0c94518c2e614d836f61f6e722e07
+      internalID: -1468924893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_7"
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 699
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d66fdd121ab8346a52b45348e803b7
+      internalID: -770893253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_8"
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 699
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f9d588119ebff41b2034e6b567f44e
+      internalID: 1454865175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_9"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 699
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af52ae0807493fe499659bd36a0808b7
+      internalID: 1176430913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_10"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 466
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c560272d1c5a57408233663766940c5
+      internalID: -807707540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_11"
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 466
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2af0018145c02b49bfcb22833ffcd66
+      internalID: -866008877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_12"
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 466
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2196e81f2dcb942bdc27e823a8bbbf
+      internalID: -142446590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_13"
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 466
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10d1a4d10bdacb438871572525f93cd
+      internalID: -1588540944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_14"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 466
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7d71c8e36e3584f8a5be0188121001
+      internalID: 1463710249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_15"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 233
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ce2c84578fbbf4c9ae2807df4aa823
+      internalID: 1607588552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_16"
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 233
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cc887f262f1c140811961e52d202f4
+      internalID: -675121064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_17"
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 233
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674725a77ba9cdb4aabfafcdad22d9f3
+      internalID: 246143561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_18"
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 233
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7bc956b9dde8c4f9e8f400dcf17fc2
+      internalID: 1615080329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_19"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 233
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a56e16b53dbc14eb3c3bd698bfc854
+      internalID: 535456683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_20"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4cd344671776d43b28819ab46b1e89
+      internalID: 613109814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_21"
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124cf4ad59de9a34088ecb7d632ae853
+      internalID: -972833842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_22"
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae246fb217ee5f4a97ee12e7882a43c
+      internalID: 258078225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Perros dormidos bajo el ciclo del d\xEDa_23"
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 250
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3590fce948dc9c44c92297ed4c67000e
+      internalID: -582259125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1b3c26714426ecb4083f5c41037d975d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":250.0,"y":233.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      "Perros dormidos bajo el ciclo del d\xEDa_0": 4768971686670832306
+      "Perros dormidos bajo el ciclo del d\xEDa_1": 2070095402
+      "Perros dormidos bajo el ciclo del d\xEDa_10": -807707540
+      "Perros dormidos bajo el ciclo del d\xEDa_11": -866008877
+      "Perros dormidos bajo el ciclo del d\xEDa_12": -142446590
+      "Perros dormidos bajo el ciclo del d\xEDa_13": -1588540944
+      "Perros dormidos bajo el ciclo del d\xEDa_14": 1463710249
+      "Perros dormidos bajo el ciclo del d\xEDa_15": 1607588552
+      "Perros dormidos bajo el ciclo del d\xEDa_16": -675121064
+      "Perros dormidos bajo el ciclo del d\xEDa_17": 246143561
+      "Perros dormidos bajo el ciclo del d\xEDa_18": 1615080329
+      "Perros dormidos bajo el ciclo del d\xEDa_19": 535456683
+      "Perros dormidos bajo el ciclo del d\xEDa_2": -1764303774
+      "Perros dormidos bajo el ciclo del d\xEDa_20": 613109814
+      "Perros dormidos bajo el ciclo del d\xEDa_21": -972833842
+      "Perros dormidos bajo el ciclo del d\xEDa_22": 258078225
+      "Perros dormidos bajo el ciclo del d\xEDa_23": -582259125
+      "Perros dormidos bajo el ciclo del d\xEDa_3": 2002235309
+      "Perros dormidos bajo el ciclo del d\xEDa_4": 1686338519
+      "Perros dormidos bajo el ciclo del d\xEDa_5": -1004997550
+      "Perros dormidos bajo el ciclo del d\xEDa_6": -1468924893
+      "Perros dormidos bajo el ciclo del d\xEDa_7": -770893253
+      "Perros dormidos bajo el ciclo del d\xEDa_8": 1454865175
+      "Perros dormidos bajo el ciclo del d\xEDa_9": 1176430913
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

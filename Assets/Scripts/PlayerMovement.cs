@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sr;
     Vector2 direccion;
     string animActual = "";
-    string ultimaDireccion = "frente"; // frente, detras o lateral
+    string ultimaDireccion = "frente";
 
     void Awake()
     {
@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Si hay un diálogo abierto, Cassandra se queda quieta respirando
         if (DialogoNPC.Activo)
         {
             direccion = Vector2.zero;
@@ -53,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             if (x != 0f)
             {
                 ultimaDireccion = "lateral";
-                sr.flipX = x < 0f; // izquierda = voltear
+                sr.flipX = x < 0f;
             }
             else if (y > 0f)
             {
