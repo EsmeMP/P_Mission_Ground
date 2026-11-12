@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,15 @@ public class FastTyperManager : MonoBehaviour
     public TextMeshProUGUI txtContador;
     public TextMeshProUGUI txtNivel;
     public TextMeshProUGUI txtTemporizador;
-    public TextMeshProUGUI txtVidas;
+
+    [Header("Sonidos del Juego")]
+    public AudioSource audioSource;
+    public AudioClip sonidoError;
+    public AudioClip sonidoVictoria;
+
+    [Header("Vidas (Arreglo de Corazones)")]
+    public Image[] imagenesCorazones;
+
     public GameObject panelVictoria;
     public GameObject panelDerrota;
     public Image imgMedallaPremio;
@@ -22,9 +31,25 @@ public class FastTyperManager : MonoBehaviour
     public string escenaSalon = "Salones";
 
     [Header("Listas de Palabras por Nivel")]
-    private string[] palabrasNivel1 = { "git", "int", "bug", "html", "css", "api", "json", "sql", "http", "ping", "ssh", "dns", "dart", "for", "if" };
-    private string[] palabrasNivel2 = { "flutter", "python", "router", "switch", "docker", "query", "server", "token", "async", "class", "print", "debug", "merge", "commit", "subnet", "packet", "port", "script", "cloud", "state" };
-    private string[] palabrasNivel3 = { "repository", "controller", "virtualization", "inheritance", "polymorphism", "middleware", "architecture", "implementation", "encrypted", "dependencies", "microservices", "infrastructure", "authentication", "asynchronous" };
+    private string[] palabrasNivel1 = {
+        "git", "int", "bug", "html", "css", "api", "json",
+        "sql", "http", "ping", "ssh", "dns", "dart", "for", "if"
+    };
+
+    private string[] palabrasNivel2 = {
+        "flutter", "python", "router", "switch", "docker",
+        "query", "server", "token", "async", "class",
+        "print", "debug", "merge", "commit", "subnet",
+        "packet", "port", "script", "cloud", "state"
+    };
+
+    private string[] palabrasNivel3 = {
+        "repository", "controller", "virtualization",
+        "inheritance", "polymorphism", "middleware",
+        "architecture", "implementation", "encrypted",
+        "dependencies", "microservices", "infrastructure",
+        "authentication", "asynchronous"
+    };
 
     private List<string> palabrasActuales = new List<string>();
     private string palabraCorrecta = "";
@@ -37,6 +62,7 @@ public class FastTyperManager : MonoBehaviour
 
     private float tiempoRestante = 0f;
     private float tiempoPorPalabra = 8f;
+
     private bool juegoActivo = false;
 
     public static bool MedallaGanada;
@@ -52,21 +78,42 @@ public class FastTyperManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        if (panelVictoria != null) panelVictoria.SetActive(false);
-        if (panelDerrota != null) panelDerrota.SetActive(false);
-        if (imgMedallaPremio != null) imgMedallaPremio.gameObject.SetActive(false);
+
+        MedallaGanada = false;
+
+        if (panelVictoria != null)
+            panelVictoria.SetActive(false);
+
+        if (panelDerrota != null)
+            panelDerrota.SetActive(false);
+
+        if (imgMedallaPremio != null)
+            imgMedallaPremio.gameObject.SetActive(false);
 
         txtContador.text = "Aciertos: 0";
+
         ActualizarVidasUI();
 
         inputRespuesta.onSubmit.AddListener(VerificarRespuesta);
+
         IniciarNivel(1);
+    }
+
+    // MÉTODO PARA REPRODUCIR LOS SONIDOS
+    void ReproducirSonido(AudioClip sonido)
+    {
+        if (audioSource != null && sonido != null)
+        {
+            audioSource.PlayOneShot(sonido);
+        }
     }
 
     void IniciarNivel(int nivel)
     {
         nivelActual = nivel;
+
         txtNivel.text = "Nivel: " + nivelActual;
+
         palabrasActuales.Clear();
 
         if (nivelActual == 1)
@@ -89,6 +136,7 @@ public class FastTyperManager : MonoBehaviour
         }
 
         juegoActivo = true;
+
         SiguientePalabra();
     }
 
@@ -115,17 +163,24 @@ public class FastTyperManager : MonoBehaviour
         }
 
         int index = Random.Range(0, palabrasActuales.Count);
+
         palabraCorrecta = palabrasActuales[index];
 
-        txtPalabraActual.color = coloresVSCode[Random.Range(0, coloresVSCode.Length)];
+        txtPalabraActual.color =
+            coloresVSCode[Random.Range(0, coloresVSCode.Length)];
+
         txtPalabraActual.text = palabraCorrecta;
 
         inputRespuesta.text = "";
+
         inputRespuesta.ActivateInputField();
 
         erroresConsecutivosEnPalabra = 0;
+
         tiempoRestante = tiempoPorPalabra;
+
         StopAllCoroutines();
+
         StartCoroutine(RutinaTiempoPalabra());
     }
 
@@ -133,9 +188,15 @@ public class FastTyperManager : MonoBehaviour
     {
         while (tiempoRestante > 0)
         {
-            if (!juegoActivo) yield break;
+            if (!juegoActivo)
+                yield break;
+
             tiempoRestante -= Time.deltaTime;
-            txtTemporizador.text = "Tiempo: " + Mathf.Max(0f, tiempoRestante).ToString("F1") + "s";
+
+            txtTemporizador.text =
+                "Tiempo: " +
+                Mathf.Max(0f, tiempoRestante).ToString("F1") + "s";
+
             yield return null;
         }
 
@@ -144,9 +205,11 @@ public class FastTyperManager : MonoBehaviour
 
     void VerificarRespuesta(string textoIngresado)
     {
-        if (!juegoActivo) return;
+        if (!juegoActivo)
+            return;
 
         textoIngresado = textoIngresado.Trim().ToLower();
+
         if (string.IsNullOrEmpty(textoIngresado))
         {
             inputRespuesta.ActivateInputField();
@@ -156,17 +219,24 @@ public class FastTyperManager : MonoBehaviour
         if (textoIngresado == palabraCorrecta)
         {
             contadorGlobal++;
+
             palabrasRestantesNivel--;
+
             txtContador.text = "Aciertos: " + contadorGlobal;
+
             SiguientePalabra();
         }
         else
         {
+            // SONIDO DE ERROR AL ESCRIBIR MAL
+            ReproducirSonido(sonidoError);
+
             erroresConsecutivosEnPalabra++;
 
             if (erroresConsecutivosEnPalabra >= 3)
             {
                 vidas--;
+
                 ActualizarVidasUI();
 
                 if (vidas <= 0)
@@ -179,10 +249,13 @@ public class FastTyperManager : MonoBehaviour
             }
             else
             {
-                txtPalabraActual.text = "// " + textoIngresado + " (" + palabraCorrecta + ")";
+                txtPalabraActual.text =
+                    "// " + textoIngresado + " (" + palabraCorrecta + ")";
+
                 txtPalabraActual.color = Color.red;
 
                 inputRespuesta.text = "";
+
                 inputRespuesta.ActivateInputField();
             }
         }
@@ -190,7 +263,11 @@ public class FastTyperManager : MonoBehaviour
 
     void ManejarErrorPorTiempoOInvalido()
     {
+        // SONIDO DE ERROR CUANDO SE ACABA EL TIEMPO
+        ReproducirSonido(sonidoError);
+
         vidas--;
+
         ActualizarVidasUI();
 
         if (vidas <= 0)
@@ -200,45 +277,83 @@ public class FastTyperManager : MonoBehaviour
         else
         {
             txtPalabraActual.text = "// timeout";
+
             txtPalabraActual.color = Color.gray;
+
             SiguientePalabra();
         }
     }
 
     void ActualizarVidasUI()
     {
-        string cor = "Vidas: ";
-        for (int i = 0; i < vidas; i++) cor += "<3 ";
-        txtVidas.text = cor;
+        if (imagenesCorazones == null)
+            return;
+
+        for (int i = 0; i < imagenesCorazones.Length; i++)
+        {
+            if (imagenesCorazones[i] != null)
+            {
+                imagenesCorazones[i].gameObject.SetActive(i < vidas);
+            }
+        }
     }
 
     void OcultarUIJuego()
     {
-        if (txtPalabraActual != null) txtPalabraActual.gameObject.SetActive(false);
-        if (inputRespuesta != null) inputRespuesta.gameObject.SetActive(false);
-        if (txtTemporizador != null) txtTemporizador.gameObject.SetActive(false);
-        if (txtNivel != null) txtNivel.gameObject.SetActive(false);
-        if (txtContador != null) txtContador.gameObject.SetActive(false);
-        if (txtVidas != null) txtVidas.gameObject.SetActive(false);
+        if (txtPalabraActual != null)
+            txtPalabraActual.gameObject.SetActive(false);
+
+        if (inputRespuesta != null)
+            inputRespuesta.gameObject.SetActive(false);
+
+        if (txtTemporizador != null)
+            txtTemporizador.gameObject.SetActive(false);
+
+        if (txtNivel != null)
+            txtNivel.gameObject.SetActive(false);
+
+        if (txtContador != null)
+            txtContador.gameObject.SetActive(false);
+
+        foreach (var corazon in imagenesCorazones)
+        {
+            if (corazon != null)
+                corazon.gameObject.SetActive(false);
+        }
     }
 
     void GanarJuego()
     {
         juegoActivo = false;
+
         StopAllCoroutines();
+
+        // SONIDO DE VICTORIA
+        ReproducirSonido(sonidoVictoria);
+
         MedallaGanada = true;
+
         OcultarUIJuego();
 
         if (panelVictoria != null)
         {
-            ConfigurarPanelFinal(panelVictoria, "¡Objetivo cumplido!", new Color(0.4f, 1f, 0.5f), true);
+            ConfigurarPanelFinal(
+                panelVictoria,
+                "¡Objetivo cumplido!",
+                new Color(0.4f, 1f, 0.5f),
+                true
+            );
+
             panelVictoria.SetActive(true);
         }
 
         if (imgMedallaPremio != null)
         {
             imgMedallaPremio.transform.SetAsLastSibling();
-            imgMedallaPremio.rectTransform.anchoredPosition = new Vector2(0f, 15f);
+
+            imgMedallaPremio.rectTransform.anchoredPosition =
+                new Vector2(0f, 15f);
+
             imgMedallaPremio.gameObject.SetActive(true);
         }
     }
@@ -246,78 +361,179 @@ public class FastTyperManager : MonoBehaviour
     void PerderJuego()
     {
         juegoActivo = false;
+
         StopAllCoroutines();
+
         OcultarUIJuego();
 
         if (panelDerrota != null)
         {
-            ConfigurarPanelFinal(panelDerrota, "¡Perdiste!", new Color(1f, 0.4f, 0.4f), false);
+            ConfigurarPanelFinal(
+                panelDerrota,
+                "¡Perdiste!",
+                new Color(1f, 0.4f, 0.4f),
+                false
+            );
+
             panelDerrota.SetActive(true);
         }
     }
 
-    void ConfigurarPanelFinal(GameObject panel, string titulo, Color colorTitulo, bool esVictoria)
+    void ConfigurarPanelFinal(
+        GameObject panel,
+        string titulo,
+        Color colorTitulo,
+        bool esVictoria
+    )
     {
         Image imgFondo = panel.GetComponent<Image>();
+
         if (imgFondo != null)
             imgFondo.color = new Color(0f, 0f, 0f, 0.88f);
 
-        // Si el panel está vacío, creamos su título, puntaje y botones automáticamente
         if (panel.transform.childCount == 0)
         {
-            TMP_FontAsset fuente = txtPalabraActual != null ? txtPalabraActual.font : null;
+            TMP_FontAsset fuente =
+                txtPalabraActual != null ? txtPalabraActual.font : null;
 
-            CrearTexto(panel.transform, "TxtTituloFinal", titulo, 42, colorTitulo, new Vector2(0f, 120f), fuente);
-            string sub = esVictoria ? "¡Ganaste la medalla!  Aciertos: " + contadorGlobal : "Aciertos logrados: " + contadorGlobal;
-            CrearTexto(panel.transform, "TxtPuntajeFinal", sub, 26, Color.white, new Vector2(0f, 70f), fuente);
+            CrearTexto(
+                panel.transform,
+                "TxtTituloFinal",
+                titulo,
+                42,
+                colorTitulo,
+                new Vector2(0f, 120f),
+                fuente
+            );
 
-            CrearBoton(panel.transform, "BtnReintentar", "Reintentar", new Vector2(-110f, -110f), fuente, Reintentar);
-            CrearBoton(panel.transform, "BtnSalir", "Salir", new Vector2(110f, -110f), fuente, Salir);
+            string sub = esVictoria
+                ? "¡Ganaste la medalla!  Aciertos: " + contadorGlobal
+                : "Aciertos logrados: " + contadorGlobal;
+
+            CrearTexto(
+                panel.transform,
+                "TxtPuntajeFinal",
+                sub,
+                26,
+                Color.white,
+                new Vector2(0f, 70f),
+                fuente
+            );
+
+            CrearBoton(
+                panel.transform,
+                "BtnReintentar",
+                "Reintentar",
+                new Vector2(-110f, -110f),
+                fuente,
+                Reintentar
+            );
+
+            CrearBoton(
+                panel.transform,
+                "BtnSalir",
+                "Salir",
+                new Vector2(110f, -110f),
+                fuente,
+                Salir
+            );
         }
     }
 
-    void CrearTexto(Transform padre, string nombre, string contenido, float tamano, Color color, Vector2 pos, TMP_FontAsset fuente)
+    void CrearTexto(
+        Transform padre,
+        string nombre,
+        string contenido,
+        float tamano,
+        Color color,
+        Vector2 pos,
+        TMP_FontAsset fuente
+    )
     {
-        GameObject obj = new GameObject(nombre, typeof(RectTransform), typeof(TextMeshProUGUI));
+        GameObject obj = new GameObject(
+            nombre,
+            typeof(RectTransform),
+            typeof(TextMeshProUGUI)
+        );
+
         obj.transform.SetParent(padre, false);
+
         RectTransform rt = obj.GetComponent<RectTransform>();
+
         rt.anchoredPosition = pos;
+
         rt.sizeDelta = new Vector2(600f, 60f);
 
         TextMeshProUGUI tmp = obj.GetComponent<TextMeshProUGUI>();
-        if (fuente != null) tmp.font = fuente;
+
+        if (fuente != null)
+            tmp.font = fuente;
+
         tmp.text = contenido;
+
         tmp.fontSize = tamano;
+
         tmp.color = color;
+
         tmp.alignment = TextAlignmentOptions.Center;
     }
 
-    void CrearBoton(Transform padre, string nombre, string textoBoton, Vector2 pos, TMP_FontAsset fuente, UnityEngine.Events.UnityAction accion)
+    void CrearBoton(
+        Transform padre,
+        string nombre,
+        string textoBoton,
+        Vector2 pos,
+        TMP_FontAsset fuente,
+        UnityEngine.Events.UnityAction accion
+    )
     {
-        GameObject btnObj = new GameObject(nombre, typeof(RectTransform), typeof(Image), typeof(Button));
+        GameObject btnObj = new GameObject(
+            nombre,
+            typeof(RectTransform),
+            typeof(Image),
+            typeof(Button)
+        );
+
         btnObj.transform.SetParent(padre, false);
+
         RectTransform rt = btnObj.GetComponent<RectTransform>();
+
         rt.anchoredPosition = pos;
+
         rt.sizeDelta = new Vector2(170f, 45f);
 
         Image img = btnObj.GetComponent<Image>();
+
         img.color = new Color(0.2f, 0.25f, 0.35f, 1f);
 
         Button btn = btnObj.GetComponent<Button>();
+
         btn.onClick.AddListener(accion);
 
-        CrearTexto(btnObj.transform, "Texto", textoBoton, 24, Color.white, Vector2.zero, fuente);
+        CrearTexto(
+            btnObj.transform,
+            "Texto",
+            textoBoton,
+            24,
+            Color.white,
+            Vector2.zero,
+            fuente
+        );
     }
 
     public void Reintentar()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().name
+        );
     }
 
     public void Salir()
     {
         Time.timeScale = 1f;
+
         SceneManager.LoadScene(escenaSalon);
     }
 }
