@@ -55,7 +55,16 @@ public class DialogoNPC : MonoBehaviour
             float distancia = Vector2.Distance(jugador.position, transform.position);
             bool cerca = distancia <= radioInteraccion;
 
-            if (aviso != null) aviso.SetActive(cerca);
+            if (cerca)
+            {
+                GestorAvisoInteraccion.MostrarSobre(transform);
+                if (aviso != null) aviso.SetActive(true);
+            }
+            else
+            {
+                GestorAvisoInteraccion.OcultarSiEs(transform);
+                if (aviso != null && aviso != GestorAvisoInteraccion.Instancia?.gameObject) aviso.SetActive(false);
+            }
 
             if (cerca && interactuar)
                 Abrir();
@@ -71,6 +80,7 @@ public class DialogoNPC : MonoBehaviour
         Activo = true;
         miDialogo = true; // CAMBIO 3
         indice = 0;
+        GestorAvisoInteraccion.OcultarSiEs(transform);
         if (aviso != null) aviso.SetActive(false);
         cajaDialogo.SetActive(true);
         textoDialogo.text = lineas[indice];

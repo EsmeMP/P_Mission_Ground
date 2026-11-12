@@ -35,6 +35,6 @@ public class ContadorMedallas : MonoBehaviour
     void Actualizar()
     {
         if (texto != null)
-            texto.text = "Medallas " + total + "/" + medallasTotales;
+            texto.text = total + "/" + medallasTotales;
     }
 }
