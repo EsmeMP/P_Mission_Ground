@@ -35,6 +35,14 @@ public class GameManager : MonoBehaviour
     private int totalParesAcumulados = 0; 
     // Para llevar la cuenta total de puntos/pares en la partida
 
+    public static bool MedallaGanada;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ReiniciarMedalla()
+    {
+        MedallaGanada = false;
+    }
+
     [Header("Sistema de Vidas (Corazones)")]
     public int vidasActuales = 3;
     public int maxVidas = 3;
@@ -101,6 +109,8 @@ public class GameManager : MonoBehaviour
         if (rondas == null || indice >= rondas.Length)
         {
             Debug.Log("¡Felicidades! Has ganado todas las rondas.");
+            MedallaGanada = true;
+            PerderJuegoTotal(); 
             return;
         }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MedallaSalon : MonoBehaviour
@@ -8,19 +9,52 @@ public class MedallaSalon : MonoBehaviour
     public float duracionVuelo = 1f;
     public float escalaFinal = 0.3f;
 
-    static bool yaEntregada;
+    [Header("Sprites de cada medalla (Opcional)")]
+    public Sprite medallaDiana; // GitCatch
+    public Sprite medallaRuth;  // Memory Match
+    public Sprite medallaPaco;  // Fast Typer
+    public Sprite medallaSonia; // Flappy VR
+
+    static bool entregadaGitCatch;
+    static bool entregadaMemory;
+    static bool entregadaFastTyper;
+    static bool entregadaFlappy;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void Reiniciar()
     {
-        yaEntregada = false;
+        entregadaGitCatch = false;
+        entregadaMemory = false;
+        entregadaFastTyper = false;
+        entregadaFlappy = false;
     }
 
     void Start()
     {
-        if (GitCatchManager.MedallaGanada && !yaEntregada)
+        Image img = GetComponent<Image>();
+
+        if (GitCatchManager.MedallaGanada && !entregadaGitCatch)
         {
-            yaEntregada = true;
+            entregadaGitCatch = true;
+            if (img != null && medallaDiana != null) img.sprite = medallaDiana;
+            StartCoroutine(Animar());
+        }
+        else if (GameManager.MedallaGanada && !entregadaMemory)
+        {
+            entregadaMemory = true;
+            if (img != null && medallaRuth != null) img.sprite = medallaRuth;
+            StartCoroutine(Animar());
+        }
+        else if (FastTyperManager.MedallaGanada && !entregadaFastTyper)
+        {
+            entregadaFastTyper = true;
+            if (img != null && medallaPaco != null) img.sprite = medallaPaco;
+            StartCoroutine(Animar());
+        }
+        else if (Puntaje.MedallaGanada && !entregadaFlappy)
+        {
+            entregadaFlappy = true;
+            if (img != null && medallaSonia != null) img.sprite = medallaSonia;
             StartCoroutine(Animar());
         }
         else

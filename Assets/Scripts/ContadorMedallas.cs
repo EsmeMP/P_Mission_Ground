@@ -5,7 +5,7 @@ public class ContadorMedallas : MonoBehaviour
 {
     public static ContadorMedallas Instancia;
     public static int total;
-    public int medallasTotales = 3;
+    public int medallasTotales = 4;
 
     TMP_Text texto;
 

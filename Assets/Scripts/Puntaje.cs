@@ -8,9 +8,19 @@ public class Puntaje : MonoBehaviour
     public TextMeshProUGUI texto;
     public GameObject panelResultado;
     public TextMeshProUGUI textoFinal;
-    private int puntos = 0;
+    public int puntosParaMedalla = 5;
+    public string escenaRegreso = "Biblioteca";
 
+    private int puntos = 0;
     public int Puntos => puntos;
+
+    public static bool MedallaGanada;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ReiniciarMedalla()
+    {
+        MedallaGanada = false;
+    }
 
     void Awake()
     {
@@ -27,11 +37,17 @@ public class Puntaje : MonoBehaviour
     public void Sumar()
     {
         puntos++;
+        if (puntos >= puntosParaMedalla)
+            MedallaGanada = true;
+
         texto.text = "Puntos: " + puntos;
     }
 
     public void MostrarResultado()
     {
+        if (puntos >= puntosParaMedalla)
+            MedallaGanada = true;
+
         textoFinal.text = "Puntos: " + puntos;
         panelResultado.SetActive(true);
         Time.timeScale = 0f;
@@ -39,6 +55,13 @@ public class Puntaje : MonoBehaviour
 
     public void Reintentar()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Salir()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(escenaRegreso);
     }
 }

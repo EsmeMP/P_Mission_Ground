@@ -40,6 +40,12 @@ public class FastTyperManager : MonoBehaviour
     private bool juegoActivo = false;
 
     public static bool MedallaGanada;
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ReiniciarMedalla()
+    {
+        MedallaGanada = false;
+    }
+
 
     private Color[] coloresVSCode = new Color[] {
         new Color(0.34f, 0.65f, 0.8f),
@@ -94,7 +100,7 @@ public class FastTyperManager : MonoBehaviour
 
     void SiguientePalabra()
     {
-        if (contadorGlobal >= 40)
+        if (contadorGlobal >= 10)
         {
             GanarJuego();
             return;
