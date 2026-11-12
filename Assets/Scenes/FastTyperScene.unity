@@ -406,6 +406,9 @@ MonoBehaviour:
   txtContador: {fileID: 575618666}
   txtNivel: {fileID: 1781379428}
   txtTemporizador: {fileID: 250180543}
+  audioSource: {fileID: 263268533}
+  sonidoError: {fileID: 8300000, guid: d1439badbc090984fa3dc67432f6371a, type: 3}
+  sonidoVictoria: {fileID: 8300000, guid: 47cfcce2a5b045941b49060b2a12bb8e, type: 3}
   imagenesCorazones:
   - {fileID: 1512931890}
   - {fileID: 1744647708}
