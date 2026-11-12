@@ -32,8 +32,7 @@ public class GameManager : MonoBehaviour
     private bool juegoActivo = false;
     private bool juegoPausado = false;
     private int paresEncontrados = 0;
-    private int totalParesAcumulados = 0; 
-    // Para llevar la cuenta total de puntos/pares en la partida
+    private int totalParesAcumulados = 0;
 
     public static bool MedallaGanada;
 
@@ -57,25 +56,32 @@ public class GameManager : MonoBehaviour
     private CardController segundaCartaSeleccionada;
     private bool esperandoComparacion = false;
 
+    [Header("Sonidos del Juego")]
+    public AudioSource audioSource;
+    public AudioClip sonidoAcierto;
+    public AudioClip sonidoError;
+    public AudioClip sonidoVictoria;
+
     [Header("Referencias de UI y Menús")]
     public TextMeshProUGUI textoTiempo;
     public TextMeshProUGUI textoPares;
     public TextMeshProUGUI textoTituloRonda;
     public GameObject panelGameOver;
-    public TextMeshProUGUI textoPuntosGameOver; 
-    // El texto que mostrará "PUNTOS: X" en el menú de derrota
+    public TextMeshProUGUI textoPuntosGameOver;
     public GameObject panelPausa;
 
     void Start()
     {
         Time.timeScale = 1f;
-         // el minijuego siempre empieza sin pausa
 
         vidasActuales = maxVidas;
         totalParesAcumulados = 0;
 
-        if (panelGameOver != null) panelGameOver.SetActive(false);
-        if (panelPausa != null) panelPausa.SetActive(false);
+        if (panelGameOver != null)
+            panelGameOver.SetActive(false);
+
+        if (panelPausa != null)
+            panelPausa.SetActive(false);
 
         ActualizarCorazonesUI();
         IniciarRonda(0);
@@ -83,8 +89,7 @@ public class GameManager : MonoBehaviour
 
     void OnDestroy()
     {
-        Time.timeScale = 1f; 
-        //  al salir de esta escena, por cualquier camino, se quita la pausa
+        Time.timeScale = 1f;
     }
 
     void Update()
@@ -108,9 +113,11 @@ public class GameManager : MonoBehaviour
     {
         if (rondas == null || indice >= rondas.Length)
         {
+            juegoActivo = false;
             Debug.Log("¡Felicidades! Has ganado todas las rondas.");
+            ReproducirSonido(sonidoVictoria);
             MedallaGanada = true;
-            PerderJuegoTotal(); 
+            PerderJuegoTotal();
             return;
         }
 
@@ -122,11 +129,17 @@ public class GameManager : MonoBehaviour
         juegoActivo = true;
         juegoPausado = false;
         esperandoComparacion = false;
+
         primeraCartaSeleccionada = null;
         segundaCartaSeleccionada = null;
 
-        if (panelGameOver != null) panelGameOver.SetActive(false);
-        if (panelPausa != null) panelPausa.SetActive(false);
+        CancelInvoke();
+
+        if (panelGameOver != null)
+            panelGameOver.SetActive(false);
+
+        if (panelPausa != null)
+            panelPausa.SetActive(false);
 
         if (textoTituloRonda != null)
             textoTituloRonda.text = "Ronda " + config.numeroRonda;
@@ -207,7 +220,7 @@ public class GameManager : MonoBehaviour
             segundaCartaSeleccionada.Voltear(true);
             esperandoComparacion = true;
 
-            Invoke("CompararCartas", 0.8f);
+            Invoke(nameof(CompararCartas), 0.8f);
         }
     }
 
@@ -215,24 +228,31 @@ public class GameManager : MonoBehaviour
     {
         if (primeraCartaSeleccionada.idPareja == segundaCartaSeleccionada.idPareja)
         {
+            // SONIDO DE ACIERTO
+            ReproducirSonido(sonidoAcierto);
+
             primeraCartaSeleccionada.MarcarComoEncontrada();
             segundaCartaSeleccionada.MarcarComoEncontrada();
 
             paresEncontrados++;
-            totalParesAcumulados++; 
-            // Suma un punto al marcador total
+            totalParesAcumulados++;
+
             ActualizarUI();
 
             RondaConfig config = rondas[indiceRondaActual];
+
             if (paresEncontrados >= config.totalPares)
             {
                 juegoActivo = false;
                 Debug.Log($"¡Ronda {config.numeroRonda} superada!");
-                Invoke("AvanzarSiguienteRonda", 1.5f);
+                Invoke(nameof(AvanzarSiguienteRonda), 1.5f);
             }
         }
         else
         {
+            // SONIDO DE ERROR
+            ReproducirSonido(sonidoError);
+
             primeraCartaSeleccionada.Voltear(false);
             segundaCartaSeleccionada.Voltear(false);
         }
@@ -240,6 +260,14 @@ public class GameManager : MonoBehaviour
         primeraCartaSeleccionada = null;
         segundaCartaSeleccionada = null;
         esperandoComparacion = false;
+    }
+
+    void ReproducirSonido(AudioClip sonido)
+    {
+        if (audioSource != null && sonido != null)
+        {
+            audioSource.PlayOneShot(sonido);
+        }
     }
 
     void AvanzarSiguienteRonda()
@@ -250,12 +278,13 @@ public class GameManager : MonoBehaviour
     void ManejarFalloRonda()
     {
         juegoActivo = false;
+        CancelInvoke();
         vidasActuales--;
         ActualizarCorazonesUI();
 
         if (vidasActuales > 0)
         {
-            Invoke("ReiniciarRondaActual", 1.5f);
+            Invoke(nameof(ReiniciarRondaActual), 1.5f);
         }
         else
         {
@@ -272,7 +301,6 @@ public class GameManager : MonoBehaviour
     {
         juegoActivo = false;
 
-        // Mostrar los puntos totales alcanzados en el menú de Game Over
         if (textoPuntosGameOver != null)
         {
             textoPuntosGameOver.text = "PUNTOS: " + totalParesAcumulados;
@@ -285,7 +313,9 @@ public class GameManager : MonoBehaviour
     void ActualizarUI()
     {
         if (textoTiempo != null)
+        {
             textoTiempo.text = "Tiempo: " + Mathf.Ceil(tiempoRestante) + "s";
+        }
 
         if (textoPares != null)
         {
@@ -297,6 +327,7 @@ public class GameManager : MonoBehaviour
     void ActualizarCorazonesUI()
     {
         if (corazonesVidas == null) return;
+
         for (int i = 0; i < corazonesVidas.Length; i++)
         {
             if (corazonesVidas[i] != null)
@@ -310,22 +341,23 @@ public class GameManager : MonoBehaviour
     {
         juegoPausado = true;
         Time.timeScale = 0f;
-        if (panelPausa != null) panelPausa.SetActive(true);
+        if (panelPausa != null)
+            panelPausa.SetActive(true);
     }
 
     public void BotonPlay()
     {
         juegoPausado = false;
         Time.timeScale = 1f;
-        if (panelPausa != null) panelPausa.SetActive(false);
+        if (panelPausa != null)
+            panelPausa.SetActive(false);
     }
 
     public void BotonIntentarDeNuevo()
     {
         Time.timeScale = 1f;
         vidasActuales = maxVidas;
-        totalParesAcumulados = 0; 
-        // Reiniciar puntos
+        totalParesAcumulados = 0;
         ActualizarCorazonesUI();
         IniciarRonda(0);
     }
@@ -333,6 +365,6 @@ public class GameManager : MonoBehaviour
     public void BotonSalir()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Salones");   // regresa al salón en vez de cerrar el juego
+        SceneManager.LoadScene("Salones");
     }
 }
