@@ -30,13 +30,16 @@ public class DialogoNPC : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         cajaDialogo.SetActive(false);
         if (aviso != null) aviso.SetActive(false);
-        Activo = false;
+        Activo = false;;
 
         if (hayPosicionGuardada && jugador != null)
         {
             jugador.position = posicionGuardada;
+            Rigidbody2D rb = jugador.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.position = posicionGuardada;
             Physics2D.SyncTransforms();
             hayPosicionGuardada = false;
         }

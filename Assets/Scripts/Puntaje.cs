@@ -6,9 +6,14 @@ public class Puntaje : MonoBehaviour
 {
     public static Puntaje instancia;
     public TextMeshProUGUI texto;
+
+    [Header("Panel Resultado (Estilo Diana)")]
     public GameObject panelResultado;
-    public TextMeshProUGUI textoFinal;
-    public int puntosParaMedalla = 5;
+    public TMP_Text textoTitulo;        //  TextoPerdiste
+    public TMP_Text textoFinal;         //  TextoPuntosFinal
+    public GameObject medallaImagen;    //  MedallaImagen
+
+    public int puntosParaMedalla = 10;
     public string escenaRegreso = "Biblioteca";
 
     private int puntos = 0;
@@ -30,8 +35,9 @@ public class Puntaje : MonoBehaviour
 
     void Start()
     {
-        texto.text = "Puntos: " + puntos;
-        panelResultado.SetActive(false);
+        if (texto != null) texto.text = "Puntos: " + puntos;
+        if (panelResultado != null) panelResultado.SetActive(false);
+        if (medallaImagen != null) medallaImagen.SetActive(false);
     }
 
     public void Sumar()
@@ -40,16 +46,27 @@ public class Puntaje : MonoBehaviour
         if (puntos >= puntosParaMedalla)
             MedallaGanada = true;
 
-        texto.text = "Puntos: " + puntos;
+        if (texto != null)
+            texto.text = "Puntos: " + puntos;
     }
 
     public void MostrarResultado()
     {
-        if (puntos >= puntosParaMedalla)
-            MedallaGanada = true;
+        bool lograda = puntos >= puntosParaMedalla;
+        if (lograda) MedallaGanada = true;
 
-        textoFinal.text = "Puntos: " + puntos;
-        panelResultado.SetActive(true);
+        if (textoTitulo != null)
+            textoTitulo.text = lograda ? "¡OBJETIVO CUMPLIDO!" : "¡PERDISTE!";
+
+        if (medallaImagen != null)
+            medallaImagen.SetActive(lograda);
+
+        if (textoFinal != null)
+            textoFinal.text = "PUNTOS: " + puntos + "/" + puntosParaMedalla;
+
+        if (panelResultado != null)
+            panelResultado.SetActive(true);
+
         Time.timeScale = 0f;
     }
 

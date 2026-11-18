@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4460512209188594772, guid: ae933289e2fce394d8d2e560fb35f4af, type: 3}
+  m_Sprite: {fileID: -4598465718826653346, guid: a28276fdad41c508d8658074fe374d8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -406,6 +406,9 @@ MonoBehaviour:
   txtContador: {fileID: 575618666}
   txtNivel: {fileID: 1781379428}
   txtTemporizador: {fileID: 250180543}
+  audioSource: {fileID: 0}
+  sonidoError: {fileID: 0}
+  sonidoVictoria: {fileID: 0}
   imagenesCorazones:
   - {fileID: 1512931890}
   - {fileID: 1744647708}

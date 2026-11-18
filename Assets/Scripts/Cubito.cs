@@ -6,6 +6,7 @@ public class Cubito : MonoBehaviour
 {
     public float fuerzaSalto = 8f;
     private Rigidbody2D rb;
+    private bool yaPerdio = false;
 
     void Start()
     {
@@ -14,6 +15,8 @@ public class Cubito : MonoBehaviour
 
     void Update()
     {
+        if (yaPerdio) return;
+
         bool toco =
             (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame) ||
             (Keyboard.current != null && Keyboard.current.upArrowKey.wasPressedThisFrame) ||
@@ -38,6 +41,8 @@ public class Cubito : MonoBehaviour
 
     void Perder()
     {
+        if (yaPerdio) return;
+        yaPerdio = true;
         Puntaje.instancia.MostrarResultado();
     }
 }
