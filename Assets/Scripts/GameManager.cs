@@ -67,7 +67,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textoPares;
     public TextMeshProUGUI textoTituloRonda;
     public GameObject panelGameOver;
-    public TextMeshProUGUI textoPuntosGameOver;
+    public TextMeshProUGUI textoTituloGameOver; // "OBJETIVO CUMPLIDO!" / "¡PERDISTE!"
+    public TextMeshProUGUI textoPuntosGameOver; // "PUNTOS: X"
+    public GameObject medallaImagen;            // Imagen de la medalla (solo visible al ganar)
     public GameObject panelPausa;
 
     void Start()
@@ -76,6 +78,12 @@ public class GameManager : MonoBehaviour
 
         vidasActuales = maxVidas;
         totalParesAcumulados = 0;
+
+        if (panelGameOver != null)
+            panelGameOver.SetActive(false);
+
+        if (medallaImagen != null)
+            medallaImagen.SetActive(false);
 
         if (panelGameOver != null)
             panelGameOver.SetActive(false);
@@ -117,7 +125,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("¡Felicidades! Has ganado todas las rondas.");
             ReproducirSonido(sonidoVictoria);
             MedallaGanada = true;
-            PerderJuegoTotal();
+            MostrarResultado(true);
             return;
         }
 
@@ -128,6 +136,13 @@ public class GameManager : MonoBehaviour
         paresEncontrados = 0;
         juegoActivo = true;
         juegoPausado = false;
+
+        if (panelGameOver != null)
+            panelGameOver.SetActive(false);
+
+        if (medallaImagen != null)
+            medallaImagen.SetActive(false);
+
         esperandoComparacion = false;
 
         primeraCartaSeleccionada = null;
@@ -220,6 +235,13 @@ public class GameManager : MonoBehaviour
             segundaCartaSeleccionada.Voltear(true);
             esperandoComparacion = true;
 
+            // Si este es el último par correcto de la ronda, detenemos el tiempo de inmediato
+            if (primeraCartaSeleccionada.idPareja == segundaCartaSeleccionada.idPareja &&
+                paresEncontrados + 1 >= rondas[indiceRondaActual].totalPares)
+            {
+                juegoActivo = false;
+            }
+
             Invoke(nameof(CompararCartas), 0.8f);
         }
     }
@@ -288,7 +310,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            PerderJuegoTotal();
+            MostrarResultado(false);
         }
     }
 
@@ -297,9 +319,19 @@ public class GameManager : MonoBehaviour
         IniciarRonda(indiceRondaActual);
     }
 
-    void PerderJuegoTotal()
+    void MostrarResultado(bool gano)
     {
         juegoActivo = false;
+
+        if (textoTituloGameOver != null)
+        {
+            textoTituloGameOver.text = gano ? "OBJETIVO CUMPLIDO!" : "¡PERDISTE!";
+        }
+
+        if (medallaImagen != null)
+        {
+            medallaImagen.SetActive(gano);
+        }
 
         if (textoPuntosGameOver != null)
         {
@@ -307,7 +339,9 @@ public class GameManager : MonoBehaviour
         }
 
         if (panelGameOver != null)
+        {
             panelGameOver.SetActive(true);
+        }
     }
 
     void ActualizarUI()
