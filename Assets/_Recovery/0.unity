@@ -18905,6 +18905,10 @@ MonoBehaviour:
   espera: 1.5
   duracionVuelo: 1
   escalaFinal: 0.3
+  medallaDiana: {fileID: 0}
+  medallaRuth: {fileID: 0}
+  medallaPaco: {fileID: 0}
+  medallaSonia: {fileID: 0}
 --- !u!114 &783471099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19932,8 +19936,6 @@ MonoBehaviour:
   mostrarAlIniciar: 1
   pausarJuego: 1
   soloContinuarEnUltimaPagina: 0
-  mostrarSoloUnaVez: 0
-  claveGuardado: Instrucciones_Salones
   ocultarMientrasAbierto: []
 --- !u!1 &1356626942
 GameObject:
@@ -63785,7 +63787,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 1
 --- !u!4 &1634921646
 Transform:
