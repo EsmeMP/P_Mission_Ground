@@ -44,6 +44,8 @@ public class MoverTorres : MonoBehaviour
 
     void Update()
     {
+        if (!Cubito.JuegoIniciado) return;
+
         int puntos = 0;
         if (Puntaje.instancia != null)
         {

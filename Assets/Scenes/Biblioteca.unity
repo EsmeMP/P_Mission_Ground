@@ -19386,8 +19386,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281385714
-  m_fontColor: {r: 0.9490196, g: 0.7607843, b: 0.1882353, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -19560,14 +19560,14 @@ RectTransform:
   m_GameObject: {fileID: 783471096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1266787042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 30}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 100, y: 137.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783471098
@@ -19583,9 +19583,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MedallaSalon
   jugador: {fileID: 995494718}
-  espera: 1.5
-  duracionVuelo: 1
-  escalaFinal: 0.3
+  espera: 1
+  duracionVuelo: 0.65
+  escalaFinal: 0.35
+  offsetSobreJugador: {x: 0, y: 2.4}
+  duracionAparicion: 0.25
+  amplitudFlote: 0.15
   medallaDiana: {fileID: -6922254044547580551, guid: e8111654f5bbebaad992dde2d96b7c29, type: 3}
   medallaRuth: {fileID: -1003199636209746853, guid: 7a0341e0b7f0e8e6992853b6bdfc5302, type: 3}
   medallaPaco: {fileID: -4598465718826653346, guid: a28276fdad41c508d8658074fe374d8e, type: 3}
