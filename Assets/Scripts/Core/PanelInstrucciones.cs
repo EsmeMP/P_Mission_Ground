@@ -43,6 +43,12 @@ public class PanelInstrucciones : MonoBehaviour
     public static bool yaSeMostro;          
     // se conserva al cambiar de escena
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Reiniciar()
+    {
+        yaSeMostro = false;
+    }
+
     int indice;
     bool abierto;
     float escalaPrevia = 1f;

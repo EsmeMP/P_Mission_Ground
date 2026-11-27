@@ -18646,6 +18646,7 @@ GameObject:
   - component: {fileID: 599693495}
   - component: {fileID: 599693494}
   - component: {fileID: 599693493}
+  - component: {fileID: 599693496}
   m_Layer: 5
   m_Name: BotonContinuar
   m_TagString: Untagged
@@ -18716,7 +18717,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 599693494}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 599693496}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &599693494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18755,6 +18768,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599693491}
   m_CullTransparentMesh: 1
+--- !u!114 &599693496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599693491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86013ff3ec67e684f9eed607b122f033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoBoton
+  sonidoClick: {fileID: 8300000, guid: c384b83c1f21c044094b3fe4ed61cc13, type: 3}
 --- !u!1 &617125696
 GameObject:
   m_ObjectHideFlags: 0
@@ -20253,6 +20279,7 @@ GameObject:
   - component: {fileID: 646750275}
   - component: {fileID: 646750274}
   - component: {fileID: 646750273}
+  - component: {fileID: 646750276}
   m_Layer: 5
   m_Name: BotonSiguiente
   m_TagString: Untagged
@@ -20323,7 +20350,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 646750274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 646750276}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &646750274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20362,6 +20401,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646750271}
   m_CullTransparentMesh: 1
+--- !u!114 &646750276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646750271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86013ff3ec67e684f9eed607b122f033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoBoton
+  sonidoClick: {fileID: 8300000, guid: c384b83c1f21c044094b3fe4ed61cc13, type: 3}
 --- !u!1 &650707807
 GameObject:
   m_ObjectHideFlags: 0
@@ -66686,6 +66738,7 @@ GameObject:
   - component: {fileID: 1540563843}
   - component: {fileID: 1540563842}
   - component: {fileID: 1540563841}
+  - component: {fileID: 1540563845}
   m_Layer: 5
   m_Name: BotonAnterior
   m_TagString: Untagged
@@ -66756,7 +66809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1540563842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1540563845}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1540563842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66795,6 +66860,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540563839}
   m_CullTransparentMesh: 1
+--- !u!114 &1540563845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540563839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86013ff3ec67e684f9eed607b122f033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoBoton
+  sonidoClick: {fileID: 8300000, guid: c384b83c1f21c044094b3fe4ed61cc13, type: 3}
 --- !u!1 &1572510198
 GameObject:
   m_ObjectHideFlags: 0
