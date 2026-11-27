@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 3b24f3123d7d87841b368a0f8a8b785b
+guid: fec302ab2e0d4474bad87c7a83f03b75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2365490083059430736
-    second: botonRojo (1)_0
-  - first:
-      213: -8186323264936698604
-    second: botonRojo (1)_1
-  - first:
-      213: -3530837336515011880
-    second: botonRojo (1)_2
-  - first:
-      213: -5633894366881498370
-    second: botonRojo (1)_3
+      213: 9039142969375759865
+    second: fondoPanel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: botonRojo (1)_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 300
-        width: 190
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ba88876d471c2fd0800000000000000
-      internalID: -2365490083059430736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botonRojo (1)_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 200
-        width: 190
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41d9ee01d56546e80800000000000000
-      internalID: -8186323264936698604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botonRojo (1)_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 190
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8da165d4622fffec0800000000000000
-      internalID: -3530837336515011880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botonRojo (1)_3
+      name: fondoPanel_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 190
-        height: 100
+        width: 320
+        height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efa34f74ce260d1b0800000000000000
-      internalID: -5633894366881498370
+      spriteID: 9fd9c93a3ac717d70800000000000000
+      internalID: 9039142969375759865
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c695d05543c07cd499be6167986a6c94
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -208,14 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":4.0},"gridSpriteSize":{"x":190.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      botonRojo (1)_0: -2365490083059430736
-      botonRojo (1)_1: -8186323264936698604
-      botonRojo (1)_2: -3530837336515011880
-      botonRojo (1)_3: -5633894366881498370
+      fondoPanel_0: 9039142969375759865
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

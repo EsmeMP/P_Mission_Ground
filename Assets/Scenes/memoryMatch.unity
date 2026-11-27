@@ -2164,13 +2164,13 @@ MonoBehaviour:
   rondas:
   - numeroRonda: 1
     totalPares: 2
-    tiempoLimite: 8
+    tiempoLimite: 10
   - numeroRonda: 2
     totalPares: 4
-    tiempoLimite: 15
+    tiempoLimite: 20
   - numeroRonda: 3
     totalPares: 6
-    tiempoLimite: 25
+    tiempoLimite: 40
   pairs:
   - sprite1: {fileID: 4882775252643722966, guid: 3404d610e5a04bd4fb2590adad144256, type: 3}
     sprite2: {fileID: 6342172942209869462, guid: 9d15573226a618d419ae234a4335c117, type: 3}
