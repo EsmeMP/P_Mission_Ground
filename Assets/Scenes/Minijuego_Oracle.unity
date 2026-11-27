@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OracleGame
   fuente: {fileID: 0}
   eliSprite: {fileID: 0}
-  escenaDeRegreso: SampleScene
+  escenaDeRegreso: PlantaAlta
 --- !u!1 &1792850950
 GameObject:
   m_ObjectHideFlags: 0

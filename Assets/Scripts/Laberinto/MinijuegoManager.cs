@@ -116,8 +116,16 @@ public class MinijuegoManager : MonoBehaviour
         Keyboard k = Keyboard.current;
         if (k != null)
         {
-            if (k.upArrowKey.wasPressedThisFrame || k.wKey.wasPressedThisFrame) Seleccionar(0);
-            if (k.downArrowKey.wasPressedThisFrame || k.sKey.wasPressedThisFrame) Seleccionar(1);
+            if ((k.upArrowKey.wasPressedThisFrame || k.wKey.wasPressedThisFrame) && seleccion != 0)
+            {
+                Seleccionar(0);
+                SonidoBotonesGlobal.ReproducirClick();
+            }
+            if ((k.downArrowKey.wasPressedThisFrame || k.sKey.wasPressedThisFrame) && seleccion != 1)
+            {
+                Seleccionar(1);
+                SonidoBotonesGlobal.ReproducirClick();
+            }
 
             bool confirmar = k.enterKey.wasPressedThisFrame || k.numpadEnterKey.wasPressedThisFrame
                           || k.spaceKey.wasPressedThisFrame || k.eKey.wasPressedThisFrame;
@@ -160,6 +168,7 @@ public class MinijuegoManager : MonoBehaviour
 
     void Confirmar()
     {
+        SonidoBotonesGlobal.ReproducirClick();
         if (seleccion == 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else

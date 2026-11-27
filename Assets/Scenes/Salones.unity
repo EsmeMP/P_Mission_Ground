@@ -21568,6 +21568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunCassandra
   speed: 3
   runSpeed: 6
+  controladorAlternoLeo: {fileID: 9100000, guid: 25b2a11087e14d5409d034e72c0511a0, type: 2}
+  spriteInicialLeo: {fileID: 54555675347826607, guid: cb9835e2f5cf3bf43ad2d44e207d050c, type: 3}
+  escalaVisualLeo: 6.25
 --- !u!1 &1043463600
 GameObject:
   m_ObjectHideFlags: 0

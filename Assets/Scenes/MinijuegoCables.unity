@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CableMinigameScene
   minigame: {fileID: 0}
-  returnScene: SampleScene_Recuperacion
+  returnScene: PlantaAlta
 --- !u!114 &8090862
 MonoBehaviour:
   m_ObjectHideFlags: 0

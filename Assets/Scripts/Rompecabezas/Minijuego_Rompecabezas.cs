@@ -784,6 +784,7 @@ public class RompecabezasManager : MonoBehaviour
 
         var btn = rt.gameObject.AddComponent<Button>();
         btn.targetGraphic = borde;
+        btn.onClick.AddListener(SonidoBotonesGlobal.ReproducirClick);
         btn.onClick.AddListener(accion);
 
         var t = CrearTexto("Texto", inner, 42, Color.white, TextAlignmentOptions.Center);

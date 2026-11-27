@@ -734,6 +734,7 @@ public static class PixelUI
         cb.selectedColor = new Color(0.9f, 0.9f, 0.9f, 1f);
         cb.pressedColor = new Color(0.65f, 0.65f, 0.65f, 1f);
         btn.colors = cb;
+        btn.onClick.AddListener(SonidoBotonesGlobal.ReproducirClick);
         btn.onClick.AddListener(onClick);
 
         MakeText(name + "_Texto", img.rectTransform, label, fontSize, Vector2.zero, size,

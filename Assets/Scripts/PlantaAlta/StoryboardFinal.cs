@@ -144,9 +144,7 @@ public class StoryboardFinal : MonoBehaviour
 
     void Click()
     {
-        if (DialogueManager.Instance == null || DialogueManager.Instance.clickClip == null) return;
-        Vector3 pos = Camera.main != null ? Camera.main.transform.position : Vector3.zero;
-        AudioSource.PlayClipAtPoint(DialogueManager.Instance.clickClip, pos, DialogueManager.Instance.clickVolume);
+        SonidoBotonesGlobal.ReproducirClick();
     }
 
     // ---------------- Interfaz construida por código ----------------

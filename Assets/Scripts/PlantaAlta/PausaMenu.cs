@@ -261,6 +261,7 @@ public class PausaMenu : MonoBehaviour
 
     void Reiniciar()
     {
+        Click();
         Medallas.Reiniciar();
 
         // Dejamos todo normal antes de cambiar de escena
@@ -283,13 +284,10 @@ public class PausaMenu : MonoBehaviour
         Pausado = false;
     }
 
-    // Reusa el sonidito de botón del DialogueManager
+    // Reusa el sonido global de los botones del resto del juego.
     void Click()
     {
-        DialogueManager dm = DialogueManager.Instance;
-        if (dm == null || dm.clickClip == null) return;
-        Vector3 pos = Camera.main != null ? Camera.main.transform.position : Vector3.zero;
-        AudioSource.PlayClipAtPoint(dm.clickClip, pos, dm.clickVolume);
+        SonidoBotonesGlobal.ReproducirClick();
     }
 
     // ---------------- Mouse (sin depender del EventSystem) ----------------

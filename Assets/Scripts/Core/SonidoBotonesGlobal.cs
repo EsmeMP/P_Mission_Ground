@@ -42,6 +42,7 @@ public class SonidoBotonesGlobal : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.loop = false;
+        audioSource.spatialBlend = 0f;
         audioSource.ignoreListenerPause = true;
 
         clipClick = Resources.Load<AudioClip>(RutaRecursoAudio);
@@ -108,5 +109,13 @@ public class SonidoBotonesGlobal : MonoBehaviour
 
         ultimoClickTiempo = Time.unscaledTime;
         instancia.audioSource.PlayOneShot(instancia.clipClick);
+    }
+
+    public static void ReproducirClip(AudioClip clip, float volumen = 1f)
+    {
+        if (clip == null) return;
+        if (instancia == null) Inicializar();
+        if (instancia != null && instancia.audioSource != null)
+            instancia.audioSource.PlayOneShot(clip, volumen);
     }
 }

@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MazeBuilder
   fuente: {fileID: 0}
-  escenaDeRegreso: SampleScene
+  escenaDeRegreso: PlantaAlta
   mapa: '###############################
 
     #P..........*...#X..#.*.......#

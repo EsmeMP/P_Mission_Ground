@@ -120,8 +120,7 @@ public class DialogueManager : MonoBehaviour
     // Sonidito de botón
     void Click()
     {
-        if (clickClip != null && audioSource != null)
-            audioSource.PlayOneShot(clickClip, clickVolume);
+        SonidoBotonesGlobal.ReproducirClick();
     }
 
     public void ShowPrompt(bool show)

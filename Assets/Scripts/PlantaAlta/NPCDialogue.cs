@@ -127,7 +127,12 @@ public class NPCDialogue : MonoBehaviour
         if (DialogueManager.Instance == null) return;
         if (Keyboard.current == null) return;
 
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        bool avanzarDialogo = Keyboard.current.eKey.wasPressedThisFrame
+            || (!DialogueManager.Instance.IsChoosing
+                && (Keyboard.current.enterKey.wasPressedThisFrame
+                    || Keyboard.current.numpadEnterKey.wasPressedThisFrame));
+
+        if (avanzarDialogo)
         {
             DialogueManager dm = DialogueManager.Instance;
 
