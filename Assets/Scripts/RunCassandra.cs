@@ -6,6 +6,11 @@ public class RunCassandra : MonoBehaviour
     public float speed = 3f;
     public float runSpeed = 6f;
 
+    [Header("Soporte de selección Leo / Cassandra")]
+    public RuntimeAnimatorController controladorAlternoLeo;
+    public Sprite spriteInicialLeo;
+    public float escalaVisualLeo = 6.25f;
+
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
@@ -13,6 +18,7 @@ public class RunCassandra : MonoBehaviour
     Vector2 lastDir = new Vector2(0f, -1f); // empieza mirando hacia abajo
     public Vector2 UltimaDireccion { get { return lastDir; } }
     bool running;
+    bool usarFlipLateral = true;
 
     void Awake()
     {
@@ -22,12 +28,50 @@ public class RunCassandra : MonoBehaviour
         // Si el SpriteRenderer está en un hijo, lo encuentra igual
         sr = GetComponent<SpriteRenderer>();
         if (sr == null) sr = GetComponentInChildren<SpriteRenderer>();
+
+        if (SeleccionPersonaje.EsLeo() && controladorAlternoLeo != null)
+        {
+            AplicarVisualLeo();
+        }
+    }
+
+    void AplicarVisualLeo()
+    {
+        usarFlipLateral = false;
+
+        SpriteRenderer baseSr = sr;
+        if (anim != null) anim.enabled = false;
+        if (baseSr != null) baseSr.enabled = false;
+
+        GameObject visual = new GameObject("VisualLeo");
+        visual.transform.SetParent(transform, false);
+        visual.transform.localPosition = Vector3.zero;
+        visual.transform.localScale = new Vector3(escalaVisualLeo, escalaVisualLeo, 1f);
+
+        SpriteRenderer nuevoSr = visual.AddComponent<SpriteRenderer>();
+        if (baseSr != null)
+        {
+            nuevoSr.sortingLayerID = baseSr.sortingLayerID;
+            nuevoSr.sortingOrder = baseSr.sortingOrder;
+            nuevoSr.sharedMaterial = baseSr.sharedMaterial;
+            nuevoSr.color = baseSr.color;
+        }
+        nuevoSr.sprite = spriteInicialLeo;
+
+        Animator nuevoAnim = visual.AddComponent<Animator>();
+        nuevoAnim.runtimeAnimatorController = controladorAlternoLeo;
+
+        sr = nuevoSr;
+        anim = nuevoAnim;
     }
 
     void Start()
     {
-        anim.SetFloat("Horizontal", lastDir.x);
-        anim.SetFloat("Vertical", lastDir.y);
+        if (anim != null)
+        {
+            anim.SetFloat("Horizontal", lastDir.x);
+            anim.SetFloat("Vertical", lastDir.y);
+        }
     }
 
     void Update()
@@ -35,12 +79,12 @@ public class RunCassandra : MonoBehaviour
         Keyboard k = Keyboard.current;
         if (k == null) return;
 
-        // Si hay un diálogo abierto, Cassandra se queda quieta
+        // Si hay un diálogo abierto, el personaje se queda quieto
         if (DialogoNPC.Activo)
         {
             move = Vector2.zero;
             running = false;
-            anim.SetBool("IsMoving", false);
+            if (anim != null) anim.SetBool("IsMoving", false);
             return;
         }
 
@@ -62,13 +106,15 @@ public class RunCassandra : MonoBehaviour
 
         if (moving) lastDir = move;
 
-        // El sprite lateral original mira a la derecha:
-        // al ir a la izquierda se voltea
-        if (sr != null && lastDir.x != 0f) sr.flipX = lastDir.x < 0f;
+        // El sprite lateral de Cassandra mira a la derecha (Leo tiene clips propios izq/der)
+        if (usarFlipLateral && sr != null && lastDir.x != 0f) sr.flipX = lastDir.x < 0f;
 
-        anim.SetBool("IsMoving", moving);
-        anim.SetFloat("Horizontal", lastDir.x);
-        anim.SetFloat("Vertical", lastDir.y);
+        if (anim != null)
+        {
+            anim.SetBool("IsMoving", moving);
+            anim.SetFloat("Horizontal", lastDir.x);
+            anim.SetFloat("Vertical", lastDir.y);
+        }
     }
 
     void FixedUpdate()

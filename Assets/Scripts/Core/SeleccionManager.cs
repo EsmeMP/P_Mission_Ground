@@ -78,13 +78,16 @@ public class SeleccionManager : MonoBehaviour
         }
 
         // Guardar personaje seleccionado (PlayerPrefs + referencia estática del proyecto)
-        SeleccionPersonaje.personajeElegido = personajeSeleccionado;
-        PlayerPrefs.SetString(
-            "NombrePersonaje",
-            personajeSeleccionado
-        );
+        SeleccionPersonaje.EstablecerPersonaje(personajeSeleccionado);
 
-        PlayerPrefs.Save();
+        // Reiniciar progreso de medallas y estados para nueva sesión
+        ContadorMedallas.total = 0;
+        GitCatchManager.MedallaGanada = false;
+        MemoryMatchManager.MedallaGanada = false;
+        FastTyperManager.MedallaGanada = false;
+        Puntaje.MedallaGanada = false;
+        Medallas.Reiniciar();
+        EstadoJuego.Reiniciar();
 
         Debug.Log("Iniciando juego con: " +
                   personajeSeleccionado);
