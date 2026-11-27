@@ -65,7 +65,10 @@ public class Puntaje : MonoBehaviour
             textoFinal.text = "PUNTOS: " + puntos + "/" + puntosParaMedalla;
 
         if (panelResultado != null)
+        {
+            FuenteDialogos.AplicarEnPanel(panelResultado);
             panelResultado.SetActive(true);
+        }
 
         Time.timeScale = 0f;
     }

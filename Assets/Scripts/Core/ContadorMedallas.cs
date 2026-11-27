@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ContadorMedallas : MonoBehaviour
 {
     public static ContadorMedallas Instancia;
     public static int total;
+    static bool transicionIniciada;
     public int medallasTotales = 4;
+    [Header("Al completar Planta Baja")]
+    public string escenaAlCompletar = "Intro";
 
     TMP_Text texto;
 
@@ -13,6 +17,7 @@ public class ContadorMedallas : MonoBehaviour
     static void Reiniciar()
     {
         total = 0;
+        transicionIniciada = false;
     }
 
     void Awake()
@@ -29,7 +34,14 @@ public class ContadorMedallas : MonoBehaviour
     public static void Sumar()
     {
         total++;
-        if (Instancia != null) Instancia.Actualizar();
+        if (Instancia == null) return;
+
+        Instancia.Actualizar();
+        if (!transicionIniciada && total >= Instancia.medallasTotales)
+        {
+            transicionIniciada = true;
+            SceneManager.LoadScene(Instancia.escenaAlCompletar);
+        }
     }
 
     void Actualizar()

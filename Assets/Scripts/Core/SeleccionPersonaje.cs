@@ -6,6 +6,7 @@ public class SeleccionPersonaje : MonoBehaviour
 {
     // Guarda quién se eligió (dura mientras el juego está abierto)
     public static string personajeElegido = "Cassandra";
+    static bool definidoEnSesion;
 
     [Header("Botones")]
     public Button botonCassandra;   // arrastra btn_Cassandra
@@ -13,6 +14,29 @@ public class SeleccionPersonaje : MonoBehaviour
 
     [Header("Siguiente escena")]
     public string escenaSiguiente = "Salones";
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ReiniciarEstaticos()
+    {
+        personajeElegido = "Cassandra";
+        definidoEnSesion = false;
+    }
+
+    public static void EstablecerPersonaje(string nombre)
+    {
+        personajeElegido = nombre;
+        definidoEnSesion = true;
+        PlayerPrefs.SetString("NombrePersonaje", nombre);
+        PlayerPrefs.Save();
+    }
+
+    public static bool EsLeo()
+    {
+        string actual = definidoEnSesion
+            ? personajeElegido
+            : PlayerPrefs.GetString("NombrePersonaje", "Cassandra");
+        return string.Equals(actual, "Leo", System.StringComparison.OrdinalIgnoreCase);
+    }
 
     void Start()
     {
@@ -25,7 +49,7 @@ public class SeleccionPersonaje : MonoBehaviour
 
     void Elegir(string nombre)
     {
-        personajeElegido = nombre;
+        EstablecerPersonaje(nombre);
         SceneManager.LoadScene(escenaSiguiente);
     }
 }

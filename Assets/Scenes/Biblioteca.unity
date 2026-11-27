@@ -19357,6 +19357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContadorMedallas
   medallasTotales: 4
+  escenaAlCompletar: Intro
 --- !u!114 &682731493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20800,6 +20801,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunCassandra
   speed: 3
   runSpeed: 6
+  controladorAlternoLeo: {fileID: 9100000, guid: 25b2a11087e14d5409d034e72c0511a0, type: 2}
+  spriteInicialLeo: {fileID: 54555675347826607, guid: cb9835e2f5cf3bf43ad2d44e207d050c, type: 3}
+  escalaVisualLeo: 6.25
 --- !u!1 &1015824188
 GameObject:
   m_ObjectHideFlags: 0
@@ -20896,6 +20900,8 @@ MonoBehaviour:
   textoPregunta: {fileID: 0}
   botonSi: {fileID: 0}
   botonNo: {fileID: 0}
+  medallasRequeridas: 0
+  mensajeFaltanMedallas: Consigue las 4 medallas para subir
 --- !u!212 &1021076598
 SpriteRenderer:
   serializedVersion: 2
@@ -67496,7 +67502,7 @@ MonoBehaviour:
   abreMinijuego: 1
   nombreEscenaMinijuego: FlappyVR
   lineas:
-  - Hola! Soy la maestra Sonia Lopez Garcia.
+  - Hola! Soy la maestra Sonia.
   - Soy docente principal de la carrera de Entornos Virtuales
   - Bien, vamos a jugar!
   - El juego es sencillo...
@@ -67736,19 +67742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871495616}
   m_CullTransparentMesh: 1
---- !u!114 &1871495621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871495616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86013ff3ec67e684f9eed607b122f033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SonidoBoton
-  sonidoClick: {fileID: 8300000, guid: c384b83c1f21c044094b3fe4ed61cc13, type: 3}
 --- !u!224 &1871495620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67769,6 +67762,19 @@ RectTransform:
   m_AnchoredPosition: {x: 130, y: -10}
   m_SizeDelta: {x: 30, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1871495621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871495616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86013ff3ec67e684f9eed607b122f033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoBoton
+  sonidoClick: {fileID: 8300000, guid: c384b83c1f21c044094b3fe4ed61cc13, type: 3}
 --- !u!1 &1888699931
 GameObject:
   m_ObjectHideFlags: 0
@@ -67831,6 +67837,8 @@ MonoBehaviour:
   textoPregunta: {fileID: 1493332808}
   botonSi: {fileID: 1742967095}
   botonNo: {fileID: 1871495617}
+  medallasRequeridas: 0
+  mensajeFaltanMedallas: Consigue las 4 medallas para subir
 --- !u!212 &1888699934
 SpriteRenderer:
   serializedVersion: 2

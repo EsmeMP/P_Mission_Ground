@@ -28,6 +28,10 @@ public class MenuPrincipal : MonoBehaviour
     public void Salir()
     {
         Debug.Log("Salir del juego");
-        Application.Quit();   // en el editor no cierra nada, en el .exe sí
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

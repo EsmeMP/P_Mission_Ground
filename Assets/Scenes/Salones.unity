@@ -20503,7 +20503,8 @@ MonoBehaviour:
   lineas:
   - Hola! Soy la maestra Diana Lizeth Ahuatzi Reyes.
   - "Doy Gesti\xF3n de Proyectos de Software."
-  - Vayamos a jugar!
+  - Vamos a jugar!
+  - El juego es sencillo, no toques los objetos rojos
 --- !u!114 &650707810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21568,6 +21569,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunCassandra
   speed: 3
   runSpeed: 6
+  controladorAlternoLeo: {fileID: 9100000, guid: 25b2a11087e14d5409d034e72c0511a0, type: 2}
+  spriteInicialLeo: {fileID: 54555675347826607, guid: cb9835e2f5cf3bf43ad2d44e207d050c, type: 3}
+  escalaVisualLeo: 6.25
 --- !u!1 &1043463600
 GameObject:
   m_ObjectHideFlags: 0
@@ -21764,6 +21768,8 @@ MonoBehaviour:
   textoPregunta: {fileID: 0}
   botonSi: {fileID: 0}
   botonNo: {fileID: 0}
+  medallasRequeridas: 0
+  mensajeFaltanMedallas: Consigue las 4 medallas para subir
 --- !u!1 &1115933515
 GameObject:
   m_ObjectHideFlags: 0
@@ -21947,6 +21953,8 @@ MonoBehaviour:
   textoPregunta: {fileID: 165881987}
   botonSi: {fileID: 1115933519}
   botonNo: {fileID: 298326702}
+  medallasRequeridas: 0
+  mensajeFaltanMedallas: Consigue las 4 medallas para subir
 --- !u!212 &1145440062
 SpriteRenderer:
   serializedVersion: 2
@@ -22406,7 +22414,7 @@ MonoBehaviour:
   lineas:
   - Hola! Soy la maestra Ruth Cervantes Gaspar.
   - Me encargo de dar la materia de Ingles.
-  - Juguemos un juego!
+  - Vamos a jugar!
   - Es un juego de memoria, asi que encuentra los pares...
 --- !u!1 &1266787041
 GameObject:
@@ -22614,6 +22622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContadorMedallas
   medallasTotales: 4
+  escenaAlCompletar: Intro
 --- !u!114 &1336549143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67091,7 +67100,7 @@ MonoBehaviour:
   lineas:
   - Hola! Soy el maestro Francisco Lopez Briones
   - Me encargo de dar materias en Desarrollo de Software
-  - Juguemos un juego...
+  - Vamos a jugar...
   - Escribe tan rapido como puedas
 --- !u!1 &1830983934
 GameObject:

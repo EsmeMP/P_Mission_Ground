@@ -34,8 +34,16 @@ public class PuertaInteraccion : MonoBehaviour
     public Button botonSi;
     public Button botonNo;
 
+    [Header("Requisito de Medallas (Opcional, ej. subir a Planta Alta)")]
+    public int medallasRequeridas = 0;
+    [TextArea(2, 3)]
+    public string mensajeFaltanMedallas = "Consigue las 4 medallas para subir";
+
     Vector3 posInicialFlotante;
     bool panelAbierto = false;
+    bool bloqueadoPorMedallas = false;
+    string textoOriginalBotonNo;
+    TMP_Text labelBotonNo;
 
     void Reset()
     {
@@ -100,6 +108,13 @@ public class PuertaInteraccion : MonoBehaviour
         if (objetoFlotante != null)
             posInicialFlotante = objetoFlotante.localPosition;
 
+        if (botonNo != null)
+        {
+            labelBotonNo = botonNo.GetComponentInChildren<TMP_Text>(true);
+            if (labelBotonNo != null)
+                textoOriginalBotonNo = labelBotonNo.text;
+        }
+
         if (botonSi != null)
             botonSi.onClick.AddListener(ConfirmarCambio);
         if (botonNo != null)
@@ -122,7 +137,14 @@ public class PuertaInteraccion : MonoBehaviour
             objetoFlotante.localPosition = new Vector3(posInicialFlotante.x, nuevoY, posInicialFlotante.z);
         }
 
-        if (panelAbierto) return;
+        if (panelAbierto)
+        {
+            var kb = Keyboard.current;
+            if (kb != null && (kb.escapeKey.wasPressedThisFrame
+                || (bloqueadoPorMedallas && (kb.enterKey.wasPressedThisFrame || kb.spaceKey.wasPressedThisFrame))))
+                CerrarPanel();
+            return;
+        }
         if (jugador == null) return;
 
         // 2. Detección de distancia
@@ -157,23 +179,53 @@ public class PuertaInteraccion : MonoBehaviour
         GestorAvisoInteraccion.OcultarSiEs(transform);
         if (avisoTeclaE != null) avisoTeclaE.SetActive(false);
 
-        if (textoPregunta != null)
-            textoPregunta.text = mensajePregunta;
+        bloqueadoPorMedallas = medallasRequeridas > 0 && ContadorMedallas.total < medallasRequeridas;
+
+        if (bloqueadoPorMedallas)
+        {
+            if (textoPregunta != null)
+                textoPregunta.text = mensajeFaltanMedallas + " (" + ContadorMedallas.total + "/" + medallasRequeridas + ")";
+            if (botonSi != null)
+                botonSi.gameObject.SetActive(false);
+            if (labelBotonNo != null)
+                labelBotonNo.text = "OK";
+        }
+        else
+        {
+            if (textoPregunta != null)
+                textoPregunta.text = mensajePregunta;
+            if (botonSi != null)
+                botonSi.gameObject.SetActive(true);
+            if (labelBotonNo != null && !string.IsNullOrEmpty(textoOriginalBotonNo))
+                labelBotonNo.text = textoOriginalBotonNo;
+        }
 
         if (panelConfirmacion != null)
+        {
+            FuenteDialogos.AplicarEnPanel(panelConfirmacion);
             panelConfirmacion.SetActive(true);
+        }
     }
 
     public void ConfirmarCambio()
     {
+        if (!panelAbierto || bloqueadoPorMedallas) return;
+        panelAbierto = false;
         DialogoNPC.Activo = false;
         SceneManager.LoadScene(nombreEscenaDestino);
     }
 
     public void CerrarPanel()
     {
+        if (!panelAbierto) return;
         panelAbierto = false;
+        bloqueadoPorMedallas = false;
         DialogoNPC.Activo = false; // Le devuelve el control al jugador
+
+        if (botonSi != null)
+            botonSi.gameObject.SetActive(true);
+        if (labelBotonNo != null && !string.IsNullOrEmpty(textoOriginalBotonNo))
+            labelBotonNo.text = textoOriginalBotonNo;
 
         if (panelConfirmacion != null)
             panelConfirmacion.SetActive(false);

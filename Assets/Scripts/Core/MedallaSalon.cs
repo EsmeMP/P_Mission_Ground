@@ -4,6 +4,8 @@ using System.Collections;
 
 public class MedallaSalon : MonoBehaviour
 {
+    const string RutaSonidoMedalla = "Medallas/Medalla_Sonido";
+
     public Transform jugador;
     public float espera = 1f;
     public float duracionVuelo = 0.65f;
@@ -25,6 +27,9 @@ public class MedallaSalon : MonoBehaviour
     static bool entregadaFastTyper;
     static bool entregadaFlappy;
 
+    AudioSource audioSource;
+    AudioClip sonidoMedalla;
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void Reiniciar()
     {
@@ -36,6 +41,11 @@ public class MedallaSalon : MonoBehaviour
 
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f;
+        sonidoMedalla = Resources.Load<AudioClip>(RutaSonidoMedalla);
+
         Image img = GetComponent<Image>();
 
         if (GitCatchManager.MedallaGanada && !entregadaGitCatch)
@@ -124,6 +134,8 @@ public class MedallaSalon : MonoBehaviour
 
         // 3. Vuelo directo hacia el jugador (aunque no se mueva)
         Vector3 posInicial = transform.position;
+        if (sonidoMedalla != null)
+            SonidoBotonesGlobal.ReproducirClip(sonidoMedalla, 0.8f);
         float t = 0f;
         while (t < 1f)
         {
