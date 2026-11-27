@@ -99,6 +99,9 @@ public class PanelInstrucciones : MonoBehaviour
             ocultarMientrasAbierto[i].SetActive(false);
         }
 
+        FuenteDialogos.AplicarEnPanel(panel);
+        FuenteDialogos.Aplicar(textoTitulo);
+        FuenteDialogos.Aplicar(textoCuerpo);
         panel.SetActive(true);
         Refrescar();
     }

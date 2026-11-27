@@ -51,6 +51,7 @@ public class MenuFinal : MonoBehaviour
         for (int i = 0; i < opcionesRT.Length; i++)
             opcionesRT[i].anchoredPosition = new Vector2(0f, -130f - i * 85f + dy);
 
+        FuenteDialogos.AplicarEnPanel(panel);
         panel.SetActive(true);
         visible = true;
         desde = Time.unscaledTime;

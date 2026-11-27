@@ -201,7 +201,10 @@ public class PuertaInteraccion : MonoBehaviour
         }
 
         if (panelConfirmacion != null)
+        {
+            FuenteDialogos.AplicarEnPanel(panelConfirmacion);
             panelConfirmacion.SetActive(true);
+        }
     }
 
     public void ConfirmarCambio()

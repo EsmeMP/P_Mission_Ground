@@ -31,6 +31,7 @@ public class DialogoNPC : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+        FuenteDialogos.Aplicar(textoDialogo);
         cajaDialogo.SetActive(false);
         if (aviso != null) aviso.SetActive(false);
         Activo = false;;

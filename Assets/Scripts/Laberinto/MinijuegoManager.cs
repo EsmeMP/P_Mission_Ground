@@ -193,6 +193,7 @@ public class MinijuegoManager : MonoBehaviour
         finIcono.sprite = icono;
         finIcono.enabled = icono != null;
         avisoObjeto.SetActive(false);
+        FuenteDialogos.AplicarEnPanel(panelFin);
         panelFin.SetActive(true);
         menuDesde = Time.time;
         Seleccionar(0);

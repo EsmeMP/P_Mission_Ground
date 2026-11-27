@@ -84,7 +84,10 @@ public class GitCatchManager : MonoBehaviour
             textoPuntosFinal.text = "Puntos: " + puntos;
 
         if (panelGameOver != null)
+        {
+            FuenteDialogos.AplicarEnPanel(panelGameOver);
             panelGameOver.SetActive(true);
+        }
 
         Time.timeScale = 0f;
     }

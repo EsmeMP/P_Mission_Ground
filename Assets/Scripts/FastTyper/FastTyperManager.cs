@@ -361,6 +361,7 @@ public class FastTyperManager : MonoBehaviour
                     Color.white,
                     true
                 );
+                FuenteDialogos.AplicarEnPanel(panelVictoria);
                 panelVictoria.SetActive(true);
             }
 
@@ -382,6 +383,7 @@ public class FastTyperManager : MonoBehaviour
                     Color.white,
                     false
                 );
+                FuenteDialogos.AplicarEnPanel(panelDerrota);
                 panelDerrota.SetActive(true);
             }
         }

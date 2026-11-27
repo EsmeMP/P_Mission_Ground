@@ -740,12 +740,12 @@ public class RompecabezasManager : MonoBehaviour
         hIm.sprite = corazonVacio;
         hIm.raycastTarget = false;
 
-        var tit = CrearTexto("Titulo", p, 64, new Color32(255, 120, 120, 255), TextAlignmentOptions.Center);
+        var tit = CrearTextoPanelFinal("Titulo", p, 56, new Color32(255, 120, 120, 255), TextAlignmentOptions.Center);
         Centrar(tit.rectTransform, new Vector2(0f, 60f), new Vector2(820f, 90f));
-        tit.characterSpacing = 4f;
+        tit.characterSpacing = 2f;
         tit.text = "SE ACABÓ EL TIEMPO";
 
-        var sub = CrearTexto("Sub", p, 36, new Color32(235, 240, 228, 255), TextAlignmentOptions.Center);
+        var sub = CrearTextoPanelFinal("Sub", p, 34, new Color32(235, 240, 228, 255), TextAlignmentOptions.Center);
         Centrar(sub.rectTransform, new Vector2(0f, -22f), new Vector2(820f, 60f));
         sub.fontStyle = FontStyles.Normal;
         sub.text = "Colocaste " + colocadas + " de " + piezas.Count + " piezas";
@@ -761,6 +761,21 @@ public class RompecabezasManager : MonoBehaviour
         }
         cg.alpha = 1f;
         cuadro.localScale = Vector3.one;
+    }
+
+    TextMeshProUGUI CrearTextoPanelFinal(string nombre, Transform padre, float tam, Color color, TextAlignmentOptions alineacion)
+    {
+        var rt = NuevoUI(nombre, padre);
+        var t = rt.gameObject.AddComponent<TextMeshProUGUI>();
+        TMP_FontAsset f = FuenteDialogos.Obtener();
+        if (f != null) t.font = f;
+        else if (fuente != null) t.font = fuente;
+        t.fontSize = tam;
+        t.fontStyle = FontStyles.Bold;
+        t.alignment = alineacion;
+        t.color = color;
+        t.raycastTarget = false;
+        return t;
     }
 
     void CrearBoton(string texto, Transform padre, Vector2 pos, Vector2 tam, Color32 color, UnityAction accion)
@@ -787,9 +802,9 @@ public class RompecabezasManager : MonoBehaviour
         btn.onClick.AddListener(SonidoBotonesGlobal.ReproducirClick);
         btn.onClick.AddListener(accion);
 
-        var t = CrearTexto("Texto", inner, 42, Color.white, TextAlignmentOptions.Center);
+        var t = CrearTextoPanelFinal("Texto", inner, 40, Color.white, TextAlignmentOptions.Center);
         Estirar(t.rectTransform, 0);
-        t.characterSpacing = 3f;
+        t.characterSpacing = 2f;
         t.text = texto;
     }
 

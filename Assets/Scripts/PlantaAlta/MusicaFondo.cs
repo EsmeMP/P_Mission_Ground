@@ -35,7 +35,9 @@ public class MusicaFondo : MonoBehaviour
     {
         if (string.IsNullOrEmpty(nombreEscena)) return false;
         string n = nombreEscena.Trim().ToLowerInvariant();
-        return n == "plantaalta"
+        return n == "salones"
+            || n == "biblioteca"
+            || n == "plantaalta"
             || n == "minijuegocables"
             || n == "minijuego_laberinto"
             || n == "minijuego_oracle"

@@ -340,6 +340,7 @@ public class MemoryMatchManager : MonoBehaviour
 
         if (panelGameOver != null)
         {
+            FuenteDialogos.AplicarEnPanel(panelGameOver);
             panelGameOver.SetActive(true);
         }
     }

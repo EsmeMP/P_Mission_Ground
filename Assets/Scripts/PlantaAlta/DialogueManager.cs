@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         promptPanel.SetActive(false);
         choicePanel.SetActive(false);
+        FuenteDialogos.Aplicar(dialogueText);
 
         // Sin el tinte por defecto de Unity (el blanco/gris al seleccionar)
         yesButton.transition = Selectable.Transition.None;

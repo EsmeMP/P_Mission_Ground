@@ -511,6 +511,7 @@ public class OracleGame : MonoBehaviour
         finTitulo.text = titulo;
         finSubtitulo.text = subtitulo;
         finIcono.texture = icono;
+        FuenteDialogos.AplicarEnPanel(panelFin);
         panelFin.SetActive(true);
         menuDesde = Time.time;
         Seleccionar(0);
